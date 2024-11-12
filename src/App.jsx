@@ -1,14 +1,15 @@
-import WebDev from './pages/WebDev'
-import Painting from './pages/Painting'
-import HomePage from './pages/HomePage'
+import WebDev from './pages/WebDev/WebDev'
+import Painting from './pages/Painting/Painting'
+import HomePage from './pages/HomePage/HomePage'
+import Contact from './pages/Contact/Contact'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 
 function App() {
-
   return (
     <Routes>
     <Route path="/" element={<HomePage />} />
+    <Route path='/contact' element={<Contact />} />
     <Route path="/webdev" element={<WebDev />} />
     <Route path="/painting" element={<Painting />}/>
   </ Routes>
