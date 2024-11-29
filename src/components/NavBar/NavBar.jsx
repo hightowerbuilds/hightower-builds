@@ -13,7 +13,6 @@ export default function NavBar() {
   const [ contactButton, setContactButton ] = useState();
   
 
-
   useEffect(() => {
     const fetchHomeButton = async () => {
       const { data, error } = await supabase.storage.from('images').getPublicUrl('home-sketch.png')
@@ -43,10 +42,6 @@ export default function NavBar() {
   }, [])
 
  
-
-
-
-
   return (
  <div className="navBarContainer">
 

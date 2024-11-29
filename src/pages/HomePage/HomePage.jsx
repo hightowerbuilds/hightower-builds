@@ -41,13 +41,13 @@ useEffect(() => {
 
 
   return (
-    <div >
+    <div className='homePageContainer' >
 
       { image ?  <img src={images[currentIndex]} className='eagleBackground' /> : 'loading'}
     
         <NavBar />
 
-      <div className='homePageContainer'></div>
+      
 
 
     </div>

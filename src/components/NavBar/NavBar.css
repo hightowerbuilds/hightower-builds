@@ -1,4 +1,6 @@
 .navBarContainer {
+    position: absolute;
+    z-index: 2;
     margin-left: 3%;
     font-family: 'Courier New', Courier, monospace;
     width: 900px;

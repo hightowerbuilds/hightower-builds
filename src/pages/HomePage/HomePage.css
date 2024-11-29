@@ -1,15 +1,13 @@
 
 .homePageContainer {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #242424;
 }
 
 .eagleBackground {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     height: auto;
     width: 100%;
     
@@ -17,7 +15,7 @@
 
 .eagleStickBackground {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     height: auto;
     width: 100%;
     margin-top: 83vh;
