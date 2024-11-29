@@ -1,6 +1,26 @@
 .navBarContainer {
+
     font-family: 'Courier New', Courier, monospace;
-    width: 100%;
+    width: 900px;
     display: flex;
     justify-content: space-around;
+}
+
+.homeButton {
+    width: 200px;
+}
+
+.clothingButton {
+    margin-top: 40px;
+    width: 280px; 
+}
+
+.webDevButton {
+    margin-top: 20px;
+    width: 300px;
+}
+
+.contactButton {
+    margin-top: 32px;
+    width: 290px;
 }
