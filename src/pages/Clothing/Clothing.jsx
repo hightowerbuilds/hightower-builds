@@ -1,3 +1,5 @@
+
+import './Clothing.css'
 import NavBar from "../../components/NavBar/NavBar"
 
 export default function Painting() {
@@ -6,8 +8,10 @@ export default function Painting() {
 
       <NavBar />
 
-      Painting
     
+    <div className="clothingContainer">
+      Clothing
+    </div>
     </div>
   )
 }

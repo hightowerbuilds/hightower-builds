@@ -21,10 +21,12 @@ export default function ImageCarousel() {
   return (
     <div>
       {
-        images ?  <img style={{
+        images ?  
+        <img style={{
           width: '100%',
           height: 'auto'
-        }} src={images} /> : 'loading photo'
+        }} src={images} /> 
+        : 'loading photo'
       }
      
     </div>

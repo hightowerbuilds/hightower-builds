@@ -1,5 +1,5 @@
 
-import ImageCarousel from "../../components/ImageCarousel/ImageCarousel"
+import './HomePage.css'
 import NavBar from "../../components/NavBar/NavBar"
 
 export default function HomePage() {
@@ -7,10 +7,10 @@ export default function HomePage() {
     <div>
         <NavBar />
 
-        Home Page
+     
 
-        <div>
-          <ImageCarousel />
+        <div className='homePageContainer'>
+          Home Page
         </div>
     </div>
   )

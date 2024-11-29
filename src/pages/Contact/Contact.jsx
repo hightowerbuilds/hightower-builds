@@ -1,3 +1,5 @@
+
+import './Contact.css'
 import NavBar from "../../components/NavBar/NavBar";
 
 
@@ -7,7 +9,11 @@ export default function Contact() {
     
     <NavBar />
         
-        Contact
+        <div className="contactContainer">
+          lukehightower11@gmail.com
+          <br />
+          Coupeville, WA
+        </div>
     </div>
   )
 }

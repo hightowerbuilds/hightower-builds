@@ -1,4 +1,5 @@
 
+import './WebDev.css'
 import NavBar from "../../components/NavBar/NavBar"
 
 export default function WebDev() {
@@ -7,8 +8,10 @@ export default function WebDev() {
 
       <NavBar />
 
-      WebDev
-      
+    <div className='webDevContainer'>
+    WebDev
+    </div>
+     
     </div>
   )
 }
