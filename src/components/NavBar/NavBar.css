@@ -7,20 +7,20 @@
 }
 
 .homeButton {
-    width: 200px;
+    width: 130px;
 }
 
 .clothingButton {
-    margin-top: 40px;
-    width: 280px; 
+    margin-top: 20px;
+    width: 190px; 
 }
 
 .webDevButton {
-    margin-top: 20px;
-    width: 300px;
+    margin-top: 10px;
+    width: 190px;
 }
 
 .contactButton {
-    margin-top: 32px;
-    width: 290px;
+    margin-top: 20px;
+    width: 190px;
 }
