@@ -8,6 +8,8 @@ export default function HomePage() {
 
   const [ image, setImage ] = useState();
   const [ imageTwo, setImageTwo ] = useState();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
 
   useEffect(() => {
 
@@ -24,17 +26,25 @@ export default function HomePage() {
     fetchEagle()
     fetchEagleOnStick()
      
-  }, [])
+    }, [])
+
+    const images = [image, imageTwo]
 
 
+useEffect(() => {
+  const intervalId = setInterval(() => {
+    setCurrentIndex((currentIndex + 1) % images.length); 
+  }, 7000);
 
+  return () => clearInterval(intervalId);
+}, [images]);
 
 
   return (
-    <div style={{ width: '100%'}}>
+    <div >
 
-      { image ?  <img src={image} className='eagleBackground' /> : 'loading'}
-      { imageTwo ?  <img src={imageTwo} className='eagleStickBackground' /> : 'loading'}
+      { image ?  <img src={images[currentIndex]} className='eagleBackground' /> : 'loading'}
+    
         <NavBar />
 
       <div className='homePageContainer'></div>
