@@ -15,22 +15,22 @@ export default function NavBar() {
 
   useEffect(() => {
     const fetchHomeButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('home-sketch.png')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/home-sketch.png')
       setHomeButton(data.publicUrl)
     }
     
     const fetchClothingButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('clothing-sketch.png')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/clothing-sketch.png')
       setClothingButton(data.publicUrl)
     }
 
     const fetchWebDevButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('webdev-sketch.png')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/webdev-sketch.png')
       setWebDevButton(data.publicUrl)
     }
 
     const fetchContactButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('contact-sketch.png')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/contact-sketch.png')
       setContactButton(data.publicUrl)
     }
 

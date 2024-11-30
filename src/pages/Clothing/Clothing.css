@@ -2,7 +2,12 @@
 .clothingContainer {
     height: 90vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+} 
+
+.landscapeBackground {
+    position: absolute;
+    z-index: 0;
+    height: auto;
+    width: 100%;
 }
