@@ -10,6 +10,9 @@ const [ grassImage, setGrassImage ] = useState();
 const [ grassWithSeed, setGrassWithSeed ] = useState();
 const [ greenGrass, setGreenGrass ] = useState();
 const [ beautifulUlgy, setBeautifulUgly ] = useState();
+const [ weirdDeer, setWeirdDeer ] = useState();
+const [ mossForest, setMossForest ] = useState();
+const [ currentIndex, setCurrentIndex ] = useState(0)
 
 useEffect( () => {
   const fetchGrassImage = async () =>  {
@@ -17,19 +20,58 @@ useEffect( () => {
     setGrassImage(data.publicUrl)
   }
 
-  fetchGrassImage();
+  const fetchGrassWithSeed = async () => {
+    const { data , error } = await supabase.storage.from('images').getPublicUrl('landscape/grassWithSeed.JPG')
+    setGrassWithSeed(data.publicUrl)
+  }
 
+  const fetchGreenGrass = async () => {
+    const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/greenGrass.JPG')
+    setGreenGrass(data.publicUrl)
+  }
+
+  const fetchBeautifulUgly = async () => {
+    const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/beautifulUgly.JPG')
+    setBeautifulUgly(data.publicUrl)
+  }
+
+  const fetchWeirdDeer = async () => {
+    const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/weirdDeer.JPG')
+    setWeirdDeer(data.publicUrl)
+  }
+
+  const fetchMossForest = async () => {
+    const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/moss-forest.jpg')
+    setMossForest(data.publicUrl)
+  }
+
+  fetchGrassImage();
+  fetchGrassWithSeed();
+  fetchGreenGrass();
+  fetchBeautifulUgly();
+  fetchWeirdDeer();
+  fetchMossForest();
 
 }, [] )
 
+  const images = [grassImage, grassWithSeed, greenGrass, beautifulUlgy, weirdDeer, mossForest]
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((currentIndex + 1) % images.length); 
+    }, 7000)
+  
+    return () => clearInterval(intervalId);
+  }, [images]);
 
   return (
     <div className='clothingContainer'>
 
       <NavBar />
-     { grassImage ?  <img src={grassImage} className='landscapeBackground' /> : 'loading'}
+     { grassImage ?  <img src={images[currentIndex]} className='landscapeBackground' /> : 'loading'}
     
   
     </div>
   )
-}
+
+  }
