@@ -73,9 +73,9 @@ useEffect(() => {
        <br />
        <br />
        <br />
-       but a sweatshirt sure sounds nice, sure don't hurt, 
+       but a sweatshirt sure sounds right, sure don't hurt, 
        keeping my arms in warm places, 
-       like lanky specials for the holidays.
+       like lanky specials through the holidays.
       </div>
 
     </div>
