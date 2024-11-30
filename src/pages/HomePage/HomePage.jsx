@@ -80,10 +80,10 @@ useEffect(() => {
        <br />
        But a sweatshirt sure sounds right. Sure don't hurt, 
        keeping my arms in warm places, 
-       like keeping your presence special through the holidays.
+       like keeping your presents special through the holidays.
        <br />
        <br />
-      <img src={saleStar} className='saleStar' />
+     
       </div>
 
     </div>
