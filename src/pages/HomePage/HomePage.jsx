@@ -63,7 +63,20 @@ useEffect(() => {
         <NavBar />
 
       
-
+      <div className='orangeBar'>
+       who is that?
+        <br />
+        <br />
+        well, if i really knew it might hurt my ears.
+        sure do like those big ol' monsters though, swoop saavy
+        with all their thoughts, all over this town.
+       <br />
+       <br />
+       <br />
+       but a sweatshirt sure sounds nice, sure don't hurt, 
+       keeping my arms in warm places, 
+       like lanky specials for the holidays.
+      </div>
 
     </div>
   )

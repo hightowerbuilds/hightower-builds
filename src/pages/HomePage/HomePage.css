@@ -13,10 +13,27 @@
     
 }
 
-.eagleStickBackground {
+
+.orangeBar {
+    display: flex;
+    justify-content: center;
+    width: 25vh;
+    height: 5vh;
     position: absolute;
-    z-index: 0;
-    height: auto;
-    width: 100%;
-    margin-top: 83vh;
+    z-index: 1;
+    top: 40vh;
+    left: 5vh;
+  
+    padding: 2%;
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 30%;
+    transition: 200ms ease-in-out;
+}
+
+.orangeBar:hover {
+    opacity: 90%;
+    font-size: 16px;
+    background-color: skyblue;
+    height: 45vh;
 }
