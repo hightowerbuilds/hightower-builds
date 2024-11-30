@@ -73,7 +73,7 @@ useEffect( () => {
   }, [images]);
 
   const handleStoreOpen = () => { !storeOpen ? setStoreOpen(true) : setStoreOpen(false)}
-  const handleStoreClose = () => { storeOpen ? setStoreOpen(false): 'X'}
+  const handleStoreClose = () => { storeOpen ? setStoreOpen(false): ''}
 
 
   return (

@@ -32,13 +32,14 @@
 }
 
 .storeContainer {
-    width: 80vh;
-    height: 50vh;
+    width: 76vh;
+    height: 80vh;
     position: absolute;
     z-index: 2;
-    left: 5vh;
+    left: 4vh;
     top: 15vh;
     border: 1px black solid;
+    border-radius: .5%;
     background: transparent;
 }
 
