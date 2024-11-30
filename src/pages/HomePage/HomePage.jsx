@@ -63,9 +63,11 @@ useEffect(() => {
 
   return (
     <div style={{
-      height: '110vh',
-      width: '100%',
+      display: 'flex',
       backgroundImage: `url(${blueSky})`, 
+      height: '120vh',
+      width: '100%'
+      
      
     }} >
 
