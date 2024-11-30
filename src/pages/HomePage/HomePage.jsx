@@ -37,7 +37,7 @@ export default function HomePage() {
     }
 
     const fetchBlueSky = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/blueSky.JPG')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/tireTracks.JPG')
       setBlueSky(data.publicUrl);
     }
 
