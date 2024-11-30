@@ -10,6 +10,7 @@ export default function HomePage() {
   const [ imageTwo, setImageTwo ] = useState();
   const [ eagleStickTwo, setEagleStickTwo ] = useState();
   const [ distantEagle, setDistantEagle] = useState();
+  const [ saleStar, setSaleStar ] = useState();
   const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -33,13 +34,18 @@ export default function HomePage() {
     const fetchDistantEagle = async () => {
       const { data, error } = await supabase.storage.from('images').getPublicUrl('eagle-photos/distant-eagle.JPG');
         setDistantEagle(data.publicUrl);
-      
+    }
+
+    const fetchSaleStar = async () => {
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/buyTheSweatshirt.png')
+      setSaleStar(data.publicUrl);
     }
 
     fetchEagle();
     fetchEagleOnStick();
     fetchEagleStickTwo();
     fetchDistantEagle();
+    fetchSaleStar();
      
     }, [])
 
@@ -64,21 +70,20 @@ useEffect(() => {
 
       
       <div className='orangeBar'>
-       who is that?
+       Who is that?
         <br />
         <br />
-        well, if i really knew it might hurt my ears.
-        sure do like those big ol' monsters though, swoop saavy
+        Well, if i really knew my ears might hurt.
+        I sure do like those big ol' monsters though, swoop saavy
         with all their thoughts, all over this town.
        <br />
        <br />
-       <br />
-       but a sweatshirt sure sounds right, sure don't hurt, 
+       But a sweatshirt sure sounds right. Sure don't hurt, 
        keeping my arms in warm places, 
-       like lanky specials through the holidays.
+       like keeping your presence special through the holidays.
        <br />
        <br />
-       sweathshirt link
+      <img src={saleStar} className='saleStar' />
       </div>
 
     </div>
