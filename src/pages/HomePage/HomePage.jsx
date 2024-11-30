@@ -10,7 +10,7 @@ export default function HomePage() {
   const [ imageTwo, setImageTwo ] = useState();
   const [ eagleStickTwo, setEagleStickTwo ] = useState();
   const [ distantEagle, setDistantEagle] = useState();
-  
+  const [ blueSky, setBlueSky ] = useState();
   const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -36,16 +36,16 @@ export default function HomePage() {
         setDistantEagle(data.publicUrl);
     }
 
-    const fetchSaleStar = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/buyTheSweatshirt.png')
-      setSaleStar(data.publicUrl);
+    const fetchBlueSky = async () => {
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/blueSky.JPG')
+      setBlueSky(data.publicUrl);
     }
 
     fetchEagle();
     fetchEagleOnStick();
     fetchEagleStickTwo();
     fetchDistantEagle();
-    fetchSaleStar();
+    fetchBlueSky();
      
     }, [])
 
@@ -62,7 +62,12 @@ useEffect(() => {
 
 
   return (
-    <div className='homePageContainer' >
+    <div style={{
+      height: '110vh',
+      width: '100%',
+      backgroundImage: `url(${blueSky})`, 
+      backgroundSize: 'cover'
+    }} >
 
       { image ?  <img src={images[currentIndex]} className='eagleBackground' /> : 'loading'}
     
