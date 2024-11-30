@@ -1,8 +1,11 @@
 
+
 .clothingContainer {
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     background-color: darkolivegreen;
+    display: flex;
+
 } 
 
 .landscapeBackground {
@@ -19,9 +22,30 @@
     top: 40vh;
     opacity: 30%;
     transition: 500ms ease-in-out;
+    background: transparent;
 }
 
 .clickWords:hover {
     opacity: 90%;
     width: 50vh;
+    background: transparent;
+}
+
+.storeContainer {
+    width: 80vh;
+    height: 50vh;
+    position: absolute;
+    z-index: 2;
+    left: 5vh;
+    top: 15vh;
+    border: 1px black solid;
+    background: transparent;
+}
+
+.secondBackground {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 100%;
 }

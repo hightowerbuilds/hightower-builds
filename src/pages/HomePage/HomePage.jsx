@@ -10,7 +10,7 @@ export default function HomePage() {
   const [ imageTwo, setImageTwo ] = useState();
   const [ eagleStickTwo, setEagleStickTwo ] = useState();
   const [ distantEagle, setDistantEagle] = useState();
-  const [ saleStar, setSaleStar ] = useState();
+  
   const [currentIndex, setCurrentIndex] = useState(0);
 
 

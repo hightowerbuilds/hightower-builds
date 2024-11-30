@@ -7,23 +7,28 @@
     width: 900px;
     display: flex;
     justify-content: space-around;
+    background: transparent;
 }
 
 .homeButton {
     width: 130px;
+    background: inherit;
 }
 
 .clothingButton {
     margin-top: 20px;
     width: 190px; 
+    background: transparent;
 }
 
 .webDevButton {
     margin-top: 10px;
     width: 190px;
+    background: transparent;
 }
 
 .contactButton {
     margin-top: 20px;
     width: 190px;
+    background: transparent;
 }

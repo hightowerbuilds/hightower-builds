@@ -14,6 +14,7 @@ const [ weirdDeer, setWeirdDeer ] = useState();
 const [ mossForest, setMossForest ] = useState();
 const [ clickWords, setClickWords ] = useState();
 const [ currentIndex, setCurrentIndex ] = useState(0)
+const [ storeOpen, setStoreOpen] = useState(false)
 
 useEffect( () => {
   const fetchGrassImage = async () =>  {
@@ -71,16 +72,31 @@ useEffect( () => {
     return () => clearInterval(intervalId);
   }, [images]);
 
+  const handleStoreOpen = () => { !storeOpen ? setStoreOpen(true) : setStoreOpen(false)}
+  const handleStoreClose = () => { storeOpen ? setStoreOpen(false): 'X'}
+
+
   return (
     <div className='clothingContainer'>
 
       <NavBar />
-     { grassImage ?  <img src={images[currentIndex]} className='landscapeBackground' /> : 'loading'}
+     { grassImage ? 
+     <>
+     <img src={images[currentIndex]} className='landscapeBackground' /> 
+     </>
+    : 'loading'}
     
-    <button>
+    {
+      storeOpen ? 
+      <div className='storeContainer'>
+      here is the store 
+      <button onClick={handleStoreClose}>close store</button>
+      </div> :  
+      <button onClick={handleStoreOpen}>
       <img src={clickWords} className='clickWords'  />
-    </button>
-  
+      </button>
+    }
+   
     </div>
   )
 
