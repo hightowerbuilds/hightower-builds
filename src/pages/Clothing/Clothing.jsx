@@ -12,6 +12,7 @@ const [ greenGrass, setGreenGrass ] = useState();
 const [ beautifulUlgy, setBeautifulUgly ] = useState();
 const [ weirdDeer, setWeirdDeer ] = useState();
 const [ mossForest, setMossForest ] = useState();
+const [ clickWords, setClickWords ] = useState();
 const [ currentIndex, setCurrentIndex ] = useState(0)
 
 useEffect( () => {
@@ -45,12 +46,18 @@ useEffect( () => {
     setMossForest(data.publicUrl)
   }
 
+  const fetchClickWords = async () => {
+    const { data, error } = await supabase.storage.from('images').getPublicUrl('words/toEnterClickHere.png')
+    setClickWords(data.publicUrl)
+  }
+
   fetchGrassImage();
   fetchGrassWithSeed();
   fetchGreenGrass();
   fetchBeautifulUgly();
   fetchWeirdDeer();
   fetchMossForest();
+  fetchClickWords();
 
 }, [] )
 
@@ -70,6 +77,9 @@ useEffect( () => {
       <NavBar />
      { grassImage ?  <img src={images[currentIndex]} className='landscapeBackground' /> : 'loading'}
     
+    <button>
+      <img src={clickWords} className='clickWords'  />
+    </button>
   
     </div>
   )
