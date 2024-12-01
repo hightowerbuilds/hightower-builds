@@ -70,7 +70,7 @@ useEffect( () => {
     }, 7000)
   
     return () => clearInterval(intervalId);
-  }, [images]);
+  }, [currentIndex, images]);
 
   const handleStoreOpen = () => { !storeOpen ? setStoreOpen(true) : setStoreOpen(false)}
   const handleStoreClose = () => { storeOpen ? setStoreOpen(false): ''}
