@@ -48,7 +48,7 @@ useEffect( () => {
   }
 
   const fetchClickWords = async () => {
-    const { data, error } = await supabase.storage.from('images').getPublicUrl('words/toEnterClickHere.png')
+    const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/fernsUnfurl.JPG')
     setClickWords(data.publicUrl)
   }
 
@@ -77,7 +77,13 @@ useEffect( () => {
 
 
   return (
-    <div className='clothingContainer'>
+    <div style={{
+      display: 'flex',
+      backgroundImage: `url(${clickWords})`, 
+      backgroundSize: 'cover',
+      height: '120vh',
+      width: '100%'
+    }} >
 
       <NavBar />
      { grassImage ? 

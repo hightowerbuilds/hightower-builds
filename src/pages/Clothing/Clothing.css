@@ -13,6 +13,7 @@
     z-index: 0;
     height: auto;
     width: 100%;
+    
 }
 
 .clickWords {
@@ -20,6 +21,7 @@
     z-index: 2;
     width: 20vh;
     top: 40vh;
+    left: 10%;
     opacity: 30%;
     transition: 500ms ease-in-out;
     background: transparent;
@@ -29,6 +31,7 @@
     opacity: 90%;
     width: 50vh;
     background: transparent;
+    cursor: grab;
 }
 
 .storeContainer {

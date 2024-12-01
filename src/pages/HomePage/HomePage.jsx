@@ -67,8 +67,6 @@ useEffect(() => {
       backgroundImage: `url(${blueSky})`, 
       height: '120vh',
       width: '100%'
-      
-     
     }} >
 
       { image ?  <img src={images[currentIndex]} className='eagleBackground' /> : 'loading'}
