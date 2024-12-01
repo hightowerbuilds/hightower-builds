@@ -6,3 +6,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.webDevBackground {
+    position: absolute;
+    z-index: 0;
+    height: auto;
+    width: 100%;
+    top: 10%;
+}
