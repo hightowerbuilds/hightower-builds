@@ -1,24 +1,18 @@
 
 
-.clothingContainer {
-    height: 120vh;
-    width: 100%;
-    background-color: darkolivegreen;
-    display: flex;
-
-} 
 
 .landscapeBackground {
     position: absolute;
     z-index: 0;
     height: auto;
     width: 100%;
-    
+    margin: 0%;
+   
 }
 
-.clickWords {
+.fernUnfurls {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     width: 20vh;
     top: 40vh;
     left: 10%;
@@ -27,7 +21,24 @@
     background: transparent;
 }
 
-.clickWords:hover {
+.fernUnfurls:hover {
+    opacity: 90%;
+    width: 50vh;
+    background: transparent;
+    cursor: grab;
+}
+
+.interiorImageOne {
+    position: absolute;
+    z-index: 3;
+    width: 20vh;
+    top: 40vh;
+    left: 10%;
+    transition: 500ms ease-in-out;
+    background: transparent;
+}
+
+.interiorImageOne:hover {
     opacity: 90%;
     width: 50vh;
     background: transparent;
