@@ -84,6 +84,7 @@ useEffect(() => {
       display: 'flex',
       backgroundImage: `url(${fernUnfurls})`, 
       backgroundSize: 'cover',
+      
       height: '120vh',
       width: '101%',
       margin: '0%',
