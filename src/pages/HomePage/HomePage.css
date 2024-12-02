@@ -1,12 +1,10 @@
 
-
-
 .eagleBackground {
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     height: auto;
     width: 100%;
-    top: 10%;
+    top: 0.5%;
 }
 
 
@@ -31,10 +29,6 @@
     transform: translateY(-20%);
     opacity: 90%;
     font-size: 22px;
-  /* background-color: skyblue; */
     height: 45vh;
 }
 
-.saleStar {
-    width: 25vh;
-}

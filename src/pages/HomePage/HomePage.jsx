@@ -18,7 +18,7 @@ export default function HomePage() {
     const fetchImage = async (imageUrl) => {
       try {
         const { data, error } = await supabase.storage.from('images').getPublicUrl(imageUrl);
-        if (error) throw error; // Re-throw caught errors for handling
+        if (error) throw error; 
   
         switch (imageUrl) {
           case 'eagle-photos/eagle.jpg':
@@ -41,7 +41,7 @@ export default function HomePage() {
         }
       } catch (error) {
         console.error(`Error fetching image from ${imageUrl}:`, error);
-        // Implement additional error handling logic here (e.g., display error message)
+       
       }
     };
   
@@ -95,6 +95,15 @@ useEffect(() => {
      
       </div>
 
+      <div className='blueBox'>
+      
+      </div>
+      <div className='blueBox'>
+      
+      </div>
+      <div className='blueBox'>
+      
+      </div>
     </div>
   )
 }
