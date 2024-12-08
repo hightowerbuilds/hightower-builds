@@ -68,7 +68,7 @@ useEffect(() => {
   return (
     <div style={{
       display: 'flex',
-      backgroundImage: `url(${tireTracks})`, 
+      backgroundColor: '#242424', 
       height: '120vh',
       width: '100%'
     }} >
@@ -95,15 +95,7 @@ useEffect(() => {
      
       </div>
 
-      <div className='blueBox'>
-      
-      </div>
-      <div className='blueBox'>
-      
-      </div>
-      <div className='blueBox'>
-      
-      </div>
+  
     </div>
   )
 }
