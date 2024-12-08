@@ -3,8 +3,11 @@
     height: 90vh;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
 }
 
 .webDevBackground {

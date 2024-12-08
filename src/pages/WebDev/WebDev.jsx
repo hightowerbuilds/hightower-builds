@@ -66,14 +66,17 @@ export default function WebDev() {
       width: '100%'
     }} >
 
-      { images ?  <img src={images[currentIndex]} className='webDevBackground' /> : 'loading'}
-
       <NavBar />
 
     <div className='webDevContainer'>
-    WebDev
+      <p>
+        the following websites are "under-construction"
+      <br /><br />
+      <a target='_blank' href="https://the-slurping-slug-app.vercel.app/">SLUGLICKER</a>
+      <br /><br />
+      <a target='_blank' href="https://brontosaurus-publications.vercel.app/">brontosaurus publications</a>
+      </p>
     </div>
-     
     </div>
   )
 }
