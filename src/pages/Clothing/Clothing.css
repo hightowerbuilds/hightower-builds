@@ -7,7 +7,7 @@
     height: auto;
     width: 100%;
     margin: 0%;
-    top: 0.5%;
+    padding: 0%;
 }
 
 .fernUnfurls {
@@ -46,13 +46,13 @@
 }
 
 .storeContainer {
-    width: 76vh;
-    height: 80vh;
+    width: 86%;
+    height: 60vh;
     position: absolute;
     z-index: 2;
     left: 4vh;
     top: 15vh;
-    border: 1px black solid;
+    border: 3px black solid;
     border-radius: .5%;
     background: transparent;
 }

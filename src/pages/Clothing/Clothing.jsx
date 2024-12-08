@@ -82,13 +82,9 @@ useEffect(() => {
   return (
     <div style={{
       display: 'flex',
-      backgroundImage: `url(${fernUnfurls})`, 
-      backgroundSize: 'cover',
-      
+      backgroundColor: '#242424',
       height: '120vh',
-      width: '101%',
-      margin: '0%',
-      marginLeft: '-.5%'
+      width: '100%'
     }} >
 
       <NavBar />
