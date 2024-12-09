@@ -78,6 +78,12 @@ useEffect(() => {
   const handleStoreOpen = () => { !storeOpen ? setStoreOpen(true) : setStoreOpen(false)}
   const handleStoreClose = () => { storeOpen ? setStoreOpen(false): setStoreOpen(true)}
 
+  const speakClick = () => {
+    const utterance = new SpeechSynthesisUtterance('go on now. give it a click');
+
+    window.speechSynthesis.speak(utterance)
+  }
+
 
   return (
     <div style={{
@@ -102,8 +108,8 @@ useEffect(() => {
       here is the store 
       <button onClick={handleStoreClose}>close store</button>
       </div> :  
-      <button onClick={handleStoreOpen}>   
-      <img src={fernUnfurls} className='fernUnfurls'>
+      <button  onClick={handleStoreOpen}>   
+      <img onMouseEnter={speakClick} src={fernUnfurls} className='fernUnfurls'>
       </img>
       </button>
     }
