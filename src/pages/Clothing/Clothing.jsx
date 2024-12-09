@@ -78,11 +78,6 @@ useEffect(() => {
   const handleStoreOpen = () => { !storeOpen ? setStoreOpen(true) : setStoreOpen(false)}
   const handleStoreClose = () => { storeOpen ? setStoreOpen(false): setStoreOpen(true)}
 
-  const speakClick = () => {
-    const utterance = new SpeechSynthesisUtterance('go on now. give it a click');
-
-    window.speechSynthesis.speak(utterance)
-  }
 
 
   return (
@@ -96,11 +91,7 @@ useEffect(() => {
       <NavBar />
 
 
-     { grassImage ? 
-     <>
-     <img src={images[currentIndex]} className='landscapeBackground' /> 
-     </>
-    : 'loading'}
+     { grassImage ?  <img src={images[currentIndex]} className='landscapeBackground' />  : 'loading'}
     
     {
       storeOpen ? 
@@ -109,7 +100,7 @@ useEffect(() => {
       <button onClick={handleStoreClose}>close store</button>
       </div> :  
       <button  onClick={handleStoreOpen}>   
-      <img onMouseEnter={speakClick} src={fernUnfurls} className='fernUnfurls'>
+      <img onMouseEnter={handleStoreOpen} src={fernUnfurls} className='fernUnfurls'>
       </img>
       </button>
     }

@@ -91,9 +91,6 @@ useEffect(() => {
        But a t-shirt sure sounds good right now, or a sweatshirt! Sure don't hurt, 
        keeping my arms in warm places, 
        like keeping your presents nice and special for the holidays.
-       <br />
-       <br />
-     
       </div>
 
   
