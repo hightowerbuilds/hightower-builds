@@ -11,6 +11,7 @@ export default function HomePage() {
   const [ eagleStickTwo, setEagleStickTwo ] = useState();
   const [ distantEagle, setDistantEagle] = useState();
   const [ tireTracks, setTireTracks ] = useState();
+  const [ eagleNotes, setEagleNotes ] = useState();
   const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -82,14 +83,14 @@ useEffect(() => {
        Who is that?
         <br />
         <br />
-        Well, if i really knew my ears might hurt.
+        Well, if i really knew my ears might be hurting pretty good right now.
         I sure do like those big ole monsters though, swoop saavy
         with all their thoughts, all over this town.
        <br />
        <br />
-       But a sweatshirt sure sounds right. Sure don't hurt, 
+       But a t-shirt sure sounds good right now, or a sweatshirt! Sure don't hurt, 
        keeping my arms in warm places, 
-       like keeping your presents special through the holidays.
+       like keeping your presents nice and special for the holidays.
        <br />
        <br />
      
