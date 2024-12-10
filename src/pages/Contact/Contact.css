@@ -2,8 +2,10 @@
     height: 90vh;
     width: 100%;
     display: flex;
+    margin-top: 5%;
     justify-content: center;
     align-items: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-size: 30px;
+    color: aliceblue;
 }

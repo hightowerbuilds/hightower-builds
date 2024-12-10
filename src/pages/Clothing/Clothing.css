@@ -1,20 +1,10 @@
 
 
-
-.landscapeBackground {
-    position: absolute;
-    z-index: 0;
-    height: auto;
-    width: 100%;
-    margin: 0%;
-    padding: 0%;
-}
-
 .fernUnfurls {
     margin: 0%;
     position: absolute;
     z-index: 1;
-    width: 20vh;
+    width: 40vh;
     top: 40vh;
     left: 10%;
     opacity: 60%;

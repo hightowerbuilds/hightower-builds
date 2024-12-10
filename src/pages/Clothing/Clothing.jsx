@@ -83,16 +83,15 @@ useEffect(() => {
   return (
     <div style={{
       display: 'flex',
-      backgroundColor: '#242424',
-      height: '120vh',
-      width: '100%'
+      backgroundImage: `url(${images[currentIndex]})` ,
+      backgroundSize: 'cover',
+      height: '100vh',
+      width: '100%',
+  
     }} >
 
       <NavBar />
 
-
-     { grassImage ?  <img src={images[currentIndex]} className='landscapeBackground' />  : 'loading'}
-    
     {
       storeOpen ? 
       <div className='storeContainer'>

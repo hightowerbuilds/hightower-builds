@@ -62,6 +62,7 @@ export default function WebDev() {
     <div style={{
       display: 'flex',
       backgroundImage: `url(${blueSky})`, 
+      backgroundSize: 'cover',
       height: '120vh',
       width: '100%'
     }} >

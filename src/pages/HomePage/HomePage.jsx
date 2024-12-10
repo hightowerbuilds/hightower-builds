@@ -10,8 +10,6 @@ export default function HomePage() {
   const [ imageTwo, setImageTwo ] = useState();
   const [ eagleStickTwo, setEagleStickTwo ] = useState();
   const [ distantEagle, setDistantEagle] = useState();
-  const [ tireTracks, setTireTracks ] = useState();
-  const [ eagleNotes, setEagleNotes ] = useState();
   const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -33,9 +31,6 @@ export default function HomePage() {
             break;
           case 'eagle-photos/distant-eagle.JPG':
             setDistantEagle(data.publicUrl);
-            break;
-          case 'landscape/tireTracks.JPG': 
-            setTireTracks(data.publicUrl);
             break;
           default:
             console.error(`Unexpected image URL: ${imageUrl}`);
@@ -69,15 +64,13 @@ useEffect(() => {
   return (
     <div style={{
       display: 'flex',
-      backgroundColor: '#242424', 
-      height: '120vh',
-      width: '100%'
+      backgroundImage: `url(${images[currentIndex]})`,
+      backgroundSize: 'cover',
+      height: '100vh',
+      width: 'auto'
     }} >
 
-      { image ?  <img src={images[currentIndex]} className='eagleBackground' /> : 'loading'}
-    
         <NavBar />
-
       
       <div className='orangeBar'>
        Who is that?
