@@ -32,9 +32,11 @@ export default function Contact() {
     <NavBar />
         
         <div className="contactContainer">
-          lukehightower11@gmail.com
+          <p>
+          <strong>lukehightower11@gmail.com</strong>
           <br />
-          Coupeville, WA
+          <strong>Coupeville, WA</strong>
+          </p>
         </div>
     </div>
   )
