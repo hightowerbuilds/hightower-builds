@@ -31,7 +31,7 @@ export default function Contact() {
     <NavBar />
         
         <div className="contactContainer">
-          <p style={{ width: '50%'}}>
+          <p style={{ width: '90%'}}>
          lukehightower11@gmail.com
           <br />
           <strong>Coupeville, WA</strong>
