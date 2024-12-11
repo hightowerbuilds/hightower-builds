@@ -93,15 +93,18 @@ useEffect(() => {
       <NavBar />
 
     {
-      storeOpen ? 
+      storeOpen 
+      
+      ? 
+      
       <div className='storeContainer'>
-      here is the store 
-      <button onClick={handleStoreClose}>close store</button>
-      </div> :  
-      <button  onClick={handleStoreOpen}>   
-      <img onMouseEnter={handleStoreOpen} src={fernUnfurls} className='fernUnfurls'>
-      </img>
-      </button>
+          <strong>here is the store</strong>
+          <button onClick={handleStoreClose}>close store</button>
+      </div> 
+      
+      : 
+
+      <img onMouseEnter={handleStoreOpen} src={fernUnfurls} className='fernUnfurls' />
     }
    
     </div>
