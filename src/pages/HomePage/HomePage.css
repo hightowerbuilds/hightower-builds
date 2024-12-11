@@ -27,7 +27,7 @@
 .orangeBar:hover {
     transform: translateY(-20%);
     opacity: 90%;
-    font-size: 24px;
+    font-size: 20px;
     height: 45vh;
 }
 
