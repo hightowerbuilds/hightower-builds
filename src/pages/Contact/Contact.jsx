@@ -10,7 +10,7 @@ export default function Contact() {
 
   useEffect(() => {
     const fetchPortrait = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('webdev/ceilingLight.JPG');
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('eagle-photos/eagleStalk.jpg');
       setPortrait(data.publicUrl)
       }
     
@@ -32,8 +32,8 @@ export default function Contact() {
     <NavBar />
         
         <div className="contactContainer">
-          <p>
-          <strong>lukehightower11@gmail.com</strong>
+          <p style={{ width: '50%'}}>
+         lukehightower11@gmail.com
           <br />
           <strong>Coupeville, WA</strong>
           </p>

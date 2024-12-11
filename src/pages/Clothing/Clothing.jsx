@@ -103,6 +103,11 @@ useEffect(() => {
 
           <strong className='itemTitle'>green shirt</strong>
           <img src={sweatshirt}  className='sweatshirt' />
+          
+          <div>
+            box of boxes
+          </div>
+
 
           <strong className='itemTitle'>green shirt</strong>
           <img src={sweatshirt}  className='sweatshirt' />
