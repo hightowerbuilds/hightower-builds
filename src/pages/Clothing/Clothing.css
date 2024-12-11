@@ -1,4 +1,15 @@
 
+.sweatshirt {
+    width: 100%;
+    margin-left: 5%;
+    margin-top: -5%;
+}
+
+.itemTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 .fernUnfurls {
     margin: 0%;
@@ -39,6 +50,7 @@
 .storeContainer {
     width: 86%;
     height: 60vh;
+    overflow-x: auto;
     position: absolute;
     z-index: 2;
     left: 4vh;
@@ -54,4 +66,10 @@
     position: absolute;
     z-index: 0;
     top: 100%;
+}
+
+.closeButton {
+    height: 2vh;
+    width: 2vh;
+    position: fixed;
 }

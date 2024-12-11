@@ -13,7 +13,7 @@ const [ beautifulUlgy, setBeautifulUgly ] = useState();
 const [ weirdDeer, setWeirdDeer ] = useState();
 const [ mossForest, setMossForest ] = useState();
 const [ fernUnfurls, setFernUnfurls ] = useState();
-
+const [ sweatshirt, setSweatShirt] = useState();
 
 const [ currentIndex, setCurrentIndex ] = useState(0)
 const [ storeOpen, setStoreOpen] = useState(false)
@@ -46,7 +46,9 @@ useEffect(() => {
         case 'landscape/fernsUnfurl.JPG':
           setFernUnfurls(data.publicUrl); 
           break;
-       
+          case 'clothes/sweatShirtSample.png':
+            setSweatShirt(data.publicUrl); 
+            break;
         default:
           console.error(`Unexpected image URL: ${imageUrl}`);
       }
@@ -62,7 +64,7 @@ useEffect(() => {
   fetchImage('landscape/weirdDeer.JPG');
   fetchImage('landscape/moss-forest.jpg');
   fetchImage('landscape/fernsUnfurl.JPG');
-
+  fetchImage('clothes/sweatShirtSample.png')
 }, []);
 
   const images = [grassImage, grassWithSeed, greenGrass, beautifulUlgy, weirdDeer, mossForest]
@@ -92,16 +94,31 @@ useEffect(() => {
 
       <NavBar />
 
-    {
-      storeOpen 
-      
-      ? 
+    { storeOpen ? 
       
       <div className='storeContainer'>
-          <strong>here is the store</strong>
-          <button onClick={handleStoreClose}>close store</button>
+
+          <button onClick={handleStoreClose} className='closeButton'>X</button>
+          <br />
+
+          <strong className='itemTitle'>green shirt</strong>
+          <img src={sweatshirt}  className='sweatshirt' />
+
+          <strong className='itemTitle'>green shirt</strong>
+          <img src={sweatshirt}  className='sweatshirt' />
+
+          <strong className='itemTitle'>green shirt</strong>
+          <img src={sweatshirt}  className='sweatshirt' />
+
+          <strong className='itemTitle'>green shirt</strong>
+          <img src={sweatshirt}  className='sweatshirt' />
+
+          <strong className='itemTitle'>green shirt</strong>
+          <img src={sweatshirt}  className='sweatshirt' />
+
+       
       </div> 
-      
+
       : 
 
       <img onMouseEnter={handleStoreOpen} src={fernUnfurls} className='fernUnfurls' />

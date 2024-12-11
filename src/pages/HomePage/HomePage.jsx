@@ -73,8 +73,6 @@ useEffect(() => {
       
       <div className='orangeBar'>
         <strong>Who is that?</strong>
-        <br />
-        <br />
         Well, if i really knew my ears might be hurting pretty good right now.
         I sure do like those big ole monsters though, swoop saavy
         with all their thoughts, all over this town.
