@@ -48,7 +48,7 @@
 
 .storeContainer {
     width: 86%;
-    height: 80vh;
+    height: 70%;
     overflow-x: auto;
     position: absolute;
     z-index: 2;
