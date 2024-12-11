@@ -25,7 +25,6 @@ export default function Contact() {
       display: 'flex',
       backgroundImage:  `url(${portrait})`,
       backgroundSize: 'cover',
-      height: '120vh',
       width: '100%'
     }}>
     
