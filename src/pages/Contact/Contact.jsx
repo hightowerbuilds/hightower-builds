@@ -25,7 +25,8 @@ export default function Contact() {
       display: 'flex',
       backgroundImage:  `url(${portrait})`,
       backgroundSize: 'cover',
-      width: '100%'
+      height: '100vh',
+      width: 'auto'
     }}>
     
     <NavBar />
