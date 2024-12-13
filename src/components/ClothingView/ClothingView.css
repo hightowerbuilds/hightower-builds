@@ -1,0 +1,28 @@
+.itemTitle {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.imgOneClothingView {
+    height: 200px;
+   
+}
+
+.imgTwoClothingView {
+    height: 200px;
+}
+
+.imgThreeClothingView {
+    height: 200px;
+}
+
+.imgContainerClothingView {
+    position: relative;
+    padding-top: 10%;
+    left: -10% ;
+    top: 10%;
+    flex-wrap: wrap;
+    width: 300px;
+
+}

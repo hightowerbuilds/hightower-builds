@@ -3,6 +3,7 @@ import './Clothing.css'
 import NavBar from "../../components/NavBar/NavBar"
 import { useEffect, useState } from 'react'
 import { supabase } from '../../services/supabase';
+import ClothingView from '../../components/ClothingView/ClothingView';
 
 export default function Painting() {
 
@@ -101,25 +102,20 @@ useEffect(() => {
           <button onClick={handleStoreClose} className='closeButton'>X</button>
           <br />
 
-          <strong className='itemTitle'>green shirt</strong>
-          <img src={sweatshirt}  className='sweatshirt' />
+          <ClothingView 
+          sweatshirt={sweatshirt} 
+          imgOne={weirdDeer}
+          imgTwo={beautifulUlgy}
+          imgThree={grassImage}
+          />
           
-          <div>
-            box of boxes
-          </div>
-
-
-          <strong className='itemTitle'>green shirt</strong>
-          <img src={sweatshirt}  className='sweatshirt' />
-
-          <strong className='itemTitle'>green shirt</strong>
-          <img src={sweatshirt}  className='sweatshirt' />
-
-          <strong className='itemTitle'>green shirt</strong>
-          <img src={sweatshirt}  className='sweatshirt' />
-
-          <strong className='itemTitle'>green shirt</strong>
-          <img src={sweatshirt}  className='sweatshirt' />
+          <ClothingView 
+          sweatshirt={sweatshirt} 
+          imgOne={weirdDeer}
+          imgTwo={beautifulUlgy}
+          imgThree={grassImage}
+          />
+                   
 
        
       </div> 
