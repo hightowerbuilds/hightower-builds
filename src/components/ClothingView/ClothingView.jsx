@@ -6,7 +6,7 @@ export default function ClothingView(props) {
     <div style={{ display: 'flex', justifyContent: 'center' }}>
         
         <div>
-            <strong className='itemTitle'>sweatshirt</strong>
+            <strong className='itemTitle'>{props.title}</strong>
             <img src={props.sweatshirt}  className='sweatshirt' />
         </div>
      

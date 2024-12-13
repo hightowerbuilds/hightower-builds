@@ -44,11 +44,12 @@
     width: 86%;
     height: 70%;
     overflow-x: auto;
+    scrollbar-color: #999 #242424;
     position: absolute;
     z-index: 2;
     left: 4vh;
     top: 15vh;
-    border-left: 2px black solid;
+    border: 1px darkkhaki dotted;
     border-radius: .5%;
     background: transparent;
 }
@@ -65,4 +66,8 @@
     height: 2vh;
     width: 2vh;
     position: fixed;
+    color: darkgrey;
+    font-size: 22px;
+    background-color: #242424;
+    border-radius: 50%;
 }

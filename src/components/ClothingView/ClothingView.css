@@ -2,19 +2,23 @@
     width: 70%;
     display: flex;
     justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
 }
 
 .imgOneClothingView {
     height: 200px;
-   
+   border-radius: 2%;
 }
 
 .imgTwoClothingView {
     height: 200px;
+    border-radius: 2%;
 }
 
 .imgThreeClothingView {
     height: 200px;
+    border-radius: 2%;
 }
 
 .imgContainerClothingView {

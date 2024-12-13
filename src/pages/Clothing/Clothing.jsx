@@ -102,8 +102,17 @@ useEffect(() => {
 
           <button onClick={handleStoreClose} className='closeButton'>X</button>
           <br />
+          <h3 style={{
+            display: 'flex',
+            width: '70%',
+            justifyContent: 'center',
+            fontFamily: 'courier',
+            fontSize: '30px',
+            margin: '3%'
+          }}>buy some sweatshirts or just sweet shirts, right here!</h3>
 
           <ClothingView 
+          title={'sweatshirt, green'}
           sweatshirt={sweatshirt} 
           imgOne={weirdDeer}
           imgTwo={beautifulUlgy}
@@ -111,6 +120,7 @@ useEffect(() => {
           />
           
           <ClothingView 
+          title={'clothing title'}
           sweatshirt={sweatshirt} 
           imgOne={weirdDeer}
           imgTwo={beautifulUlgy}

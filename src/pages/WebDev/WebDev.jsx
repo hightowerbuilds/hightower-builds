@@ -20,9 +20,7 @@ export default function WebDev() {
         if (error) throw error; 
   
         switch (imageName) {
-          case 'blueSky':
-            setBlueSky(data.publicUrl);
-            break;
+       
           case 'aloePlant':
             setAloePlant(data.publicUrl);
             break;
@@ -39,13 +37,22 @@ export default function WebDev() {
         console.error(`Error fetching image ${imageName}:`, error);
       }
     };
-  
-    fetchImage('blueSky');
+
     fetchImage('aloePlant');
     fetchImage('ceilingLight');
     fetchImage('deskLamp');
   
   }, []);
+
+
+  useEffect(() => {
+    const fetchForest = async () => {
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('landscape/forestLongView.JPG');
+      setBlueSky(data.publicUrl)
+    }
+
+    fetchForest();
+  }, [])
 
   
   const images = [ aloePlant, ceilingLight, deskLamp ]
@@ -72,11 +79,11 @@ export default function WebDev() {
 
     <div className='webDevContainer'>
       <p>
-        the following websites are "under-construction"
+        <h2>websites</h2>
+      <br />
+      <a style={{ backgroundColor: 'white'}} target='_blank' href="https://the-slurping-slug-app.vercel.app/">SLUGLICKER</a>
       <br /><br />
-      <a target='_blank' href="https://the-slurping-slug-app.vercel.app/">SLUGLICKER</a>
-      <br /><br />
-      <a target='_blank' href="https://brontosaurus-publications.vercel.app/">brontosaurus publications</a>
+      <a style={{ backgroundColor: 'white'}} target='_blank' href="https://brontosaurus-publications.vercel.app/">brontosaurus publications</a>
       </p>
     </div>
     </div>
