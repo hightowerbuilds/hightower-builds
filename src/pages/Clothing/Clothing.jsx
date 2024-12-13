@@ -86,6 +86,7 @@ useEffect(() => {
   return (
     <div style={{
       display: 'flex',
+      backgroundColor: '#242424',
       backgroundImage: `url(${images[currentIndex]})` ,
       backgroundSize: 'cover',
       height: '100vh',

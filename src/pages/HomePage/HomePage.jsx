@@ -60,36 +60,36 @@ useEffect(() => {
 }, [images]);
 
 
+
+
   return (
 
-        <div style={{
-          display: 'flex',
-          backgroundImage: `url(${images[currentIndex]})`,
-          backgroundSize: 'cover',
-          height: '100vh',
-          width: 'auto'
-        }} >
-    
-            <NavBar />
-          
-          <div className='orangeBar'>
-             Who is that?
-             <br /> 
-             <br />
-            Well, if i really knew my ears might be hurting pretty good right now.
-            I sure do like those big ole monsters though, swoop saavy
-            with all their thoughts, all over this town.
-            <br />
-            <br />
-            But a t-shirt sure sounds good right now, or a sweatshirt! Sure don't hurt, 
-            keeping my arms in warm places, 
-            like keeping your presents nice and special for the holidays.
-          </div>
-
-        </div>
-    
-    
+      <div style={{
+        display: 'flex',
+        backgroundColor: '#242424',
+        backgroundImage: `url(${images[currentIndex]})`,
+        backgroundSize: 'cover',
+        height: '100vh',  
+        width: 'auto'
+      }} >
   
- 
+          <NavBar />
+        
+        <div className='orangeBar'>
+           Who is that?
+           <br /> 
+           <br />
+          Well, if I really knew my ears might be hurting pretty good right now.
+          I sure do like those big ole monsters though, swoop saavy
+          with all their thoughts, all over this town.
+          <br />
+          <br />
+          But a t-shirt sure sounds good right now, or a sweatshirt! Sure don't hurt, 
+          keeping my arms warm in all the cool places, 
+          like keeping your presents nice and special for the holidays.
+        </div>
+
+      </div> 
+      
   )
 }

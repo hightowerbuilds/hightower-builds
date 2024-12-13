@@ -23,6 +23,7 @@ export default function Contact() {
   return (
     <div style={{
       display: 'flex',
+      backgroundColor: '#242424',
       backgroundImage:  `url(${portrait})`,
       backgroundSize: 'cover',
       height: '100vh',

@@ -48,7 +48,7 @@
     z-index: 2;
     left: 4vh;
     top: 15vh;
-    border: 3px black solid;
+    border-left: 2px black solid;
     border-radius: .5%;
     background: transparent;
 }
