@@ -109,7 +109,7 @@ useEffect(() => {
             fontFamily: 'courier',
             fontSize: '30px',
             margin: '3%'
-          }}>buy some sweatshirts or just sweet shirts, right here!</h3>
+          }}>buy some sweatshirts!</h3>
 
           <ClothingView 
           title={'sweatshirt, green'}

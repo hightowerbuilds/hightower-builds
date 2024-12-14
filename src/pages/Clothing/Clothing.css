@@ -42,14 +42,14 @@
 
 .storeContainer {
     width: 86%;
-    height: 70%;
+    height: 80%;
     overflow-x: auto;
     scrollbar-color: #999 #242424;
     position: absolute;
     z-index: 2;
     left: 4vh;
     top: 15vh;
-    border: 1px darkkhaki dotted;
+    /* border: 1px darkkhaki dotted; */
     border-radius: .5%;
     background: transparent;
 }
