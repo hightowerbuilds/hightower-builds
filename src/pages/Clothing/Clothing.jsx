@@ -100,15 +100,18 @@ useEffect(() => {
       
       <div className='storeContainer'>
 
-          <button onClick={handleStoreClose} className='closeButton'>X</button>
-          <br />
+          <button onClick={handleStoreClose} className='closeButtonA'>$</button>
+          <button onClick={handleStoreClose} className='closeButtonB'>+</button>
+          <button onClick={handleStoreClose} className='closeButtonC'>X</button>
+        
           <h3 style={{
             display: 'flex',
             width: '70%',
             justifyContent: 'center',
             fontFamily: 'courier',
             fontSize: '30px',
-            margin: '3%'
+            margin: '3%',
+            backgroundColor: 'seagreen'
           }}>buy some sweatshirts!</h3>
 
           <ClothingView 

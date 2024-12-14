@@ -79,11 +79,11 @@ export default function WebDev() {
 
     <div className='webDevContainer'>
       <p>
-        <h2 style={{ color: 'brown', backgroundColor: 'tan', display: 'flex', justifyContent: 'center'}}>websites</h2>
+        <h2 style={{ borderRadius: '1%',  color: 'brown', backgroundColor: 'tan', display: 'flex', justifyContent: 'center'}}>websites</h2>
       <br />
 
-      <a style={{ color: 'brown', backgroundColor: 'tan', display: 'flex', justifyContent: 'center'}} target='_blank' href="https://the-slurping-slug-app.vercel.app/">SLUGLICKER</a>
-      <a style={{ color: 'brown', backgroundColor: 'tan', display: 'flex', justifyContent: 'center'}} target='_blank' href="https://brontosaurus-publications.vercel.app/">brontosaurus publications</a>
+      <a style={{ borderRadius: '1%', color: 'brown', backgroundColor: 'tan', display: 'flex', justifyContent: 'center'}} target='_blank' href="https://the-slurping-slug-app.vercel.app/">SLUGLICKER</a>
+      <a style={{ borderRadius: '1%', color: 'brown', backgroundColor: 'tan', display: 'flex', justifyContent: 'center'}} target='_blank' href="https://brontosaurus-publications.vercel.app/">brontosaurus publications</a>
       </p>
     </div>
     </div>

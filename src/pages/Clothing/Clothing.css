@@ -62,12 +62,35 @@
     top: 100%;
 }
 
-.closeButton {
+.closeButtonA {
+    right: 16%;
     height: 2vh;
     width: 2vh;
     position: fixed;
     color: darkgrey;
     font-size: 22px;
     background-color: #242424;
+    border-radius: 50%;
+}
+
+.closeButtonB {
+    right: 14%;
+    height: 2vh;
+    width: 2vh;
+    position: fixed;
+    color: darkgrey;
+    font-size: 22px;
+    background-color: #242424;
+    border-radius: 50%;
+}
+
+.closeButtonC {
+    right: 12%;
+    height: 2vh;
+    width: 2vh;
+    position: fixed;
+    color: darkgrey;
+    font-size: 22px;
+    background-color: maroon;
     border-radius: 50%;
 }
