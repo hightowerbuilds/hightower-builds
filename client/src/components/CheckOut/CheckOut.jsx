@@ -1,5 +1,5 @@
 // Frontend (React Component)
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // Replace with your actual key
