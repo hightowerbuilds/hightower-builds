@@ -11,6 +11,8 @@ export default function NavBar() {
   const [ clothingButton, setClothingButton ] = useState();
   const [ webDevButton, setWebDevButton ] = useState();
   const [ contactButton, setContactButton ] = useState();
+  const [ writingButton, setWritingButton ] = useState();
+  const [ photographyButton, setPhotographyButton ] = useState();
   
 
   useEffect(() => {
@@ -34,10 +36,22 @@ export default function NavBar() {
       setContactButton(data.publicUrl)
     }
 
+    const fetchWritingButton = async () => {
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/writing-sketch.png')
+      setWritingButton(data.publicUrl)
+    }
+
+    const fetchPhotographyButton = async () => {
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/photography-sketch.png')
+      setPhotographyButton(data.publicUrl)
+    }
+
     fetchHomeButton();
     fetchClothingButton();
     fetchWebDevButton();
     fetchContactButton();
+    fetchWritingButton();
+    fetchPhotographyButton();
 
   }, [])
 
@@ -46,7 +60,9 @@ export default function NavBar() {
  <div className="navBarContainer">
 
     <NavLink to='/'>{homeButton ? <img className='homeButton' src={homeButton}></img>: 'loading'}</NavLink>
+    <NavLink> <img className='homeButton'  src={writingButton}></img></NavLink>
     <NavLink to='/clothing'>{clothingButton ? <img className='clothingButton' src={clothingButton}></img> : 'loading'}</NavLink>
+    <NavLink> <img className='homeButton' src={photographyButton}></img></NavLink>
     <NavLink to='/webdev'>{ webDevButton ? <img className='webDevButton' src={webDevButton}/> : 'loading'}</NavLink>
     <NavLink to='/contact'>{contactButton ? <img className='contactButton' src={contactButton} /> : 'loading'}</NavLink>
 

@@ -12,9 +12,9 @@ export default function Store() {
   return (
     <div >
 
-      <NavBar />
+      <NavBar />  
 
-clothing
+    clothing
    
     </div>
   )

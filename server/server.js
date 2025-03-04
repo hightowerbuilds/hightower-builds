@@ -1,13 +1,15 @@
 // Backend (Node.js with Express - Example)
+require('dotenv').config();
 const express = require('express');
-const Stripe = require('stripe');
-require('dotenv').config() // Make sure you have dotenv installed: npm install dotenv
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const cors = require('cors');
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY); // Replace with your secret key
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.use(cors());
 app.use(express.json());
+
 
 app.post('/create-checkout-session', async (req, res) => {
   const { price, productName, quantity } = req.body;
@@ -20,8 +22,8 @@ app.post('/create-checkout-session', async (req, res) => {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: productName,
-            },
+                name: productName,
+              },
             unit_amount: price, // Amount in cents
           },
           quantity: quantity,
