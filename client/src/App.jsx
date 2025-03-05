@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage'
 import Contact from './pages/Contact/Contact'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Photography from './pages/Photography/Photography'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path='/contact' element={<Contact />} />
       <Route path="/webdev" element={<WebDev />} />
       <Route path="/clothing" element={<Store />} />
+      <Route path='/photography' element={<Photography />} />
     </ Routes>
   
   )

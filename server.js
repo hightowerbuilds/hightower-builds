@@ -12,7 +12,7 @@ const storeItems = new Map([
   [2, { priceInCents: 20000, name: 'practice item 2' }],
 ]);
 
-console.log(stripe);
+
 
 app.listen(3000, () => {
     console.log("Server listening on port 3000");
