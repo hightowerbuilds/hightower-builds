@@ -8,20 +8,15 @@ export default function Photography() {
 
     const [ photoOne, setPhotoOne ] = useState()
 
-    useEffect(() => {
-        async function fetchImages() {
-                const { data, error } = await supabase.storage.from('images').getPublicUrl('eagle-photos/eagleStalk.jpg');
-                setPhotoOne(data.publicUrl)
-          }
+    // useEffect(() => {
+    //     async function fetchImages() {
+    //             const { data, error } = await supabase.storage.from('images').getPublicUrl('eagle-photos/eagleStalk.jpg');
+    //             setPhotoOne(data.publicUrl)
+    //       }
       
-          fetchImages();
-    }, [])
+    //       fetchImages();
+    // }, [])
 
-    const showImages = () => {
-        return (
-           <img style={{height: '700px'}} src={`${photoOne}`} />
-        )
-    }
 
 
 
@@ -34,7 +29,7 @@ export default function Photography() {
         Photography
 
         <div className="mainContentPhotography">
-            {showImages()}
+      
         </div>
     </div>
   )
