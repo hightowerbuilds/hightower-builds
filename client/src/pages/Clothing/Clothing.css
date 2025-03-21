@@ -1,96 +1,41 @@
-
-.sweatshirt {
-    width: 70%;
-
-}
-
-.fernUnfurls {
-    margin: 0%;
-    position: absolute;
-    z-index: 1;
-    width: 40vh;
-    top: 40vh;
-    left: 10%;
-    opacity: 60%;
-    transition: 500ms ease-in-out;
-    background: transparent;
-}
-
-.fernUnfurls:hover {
-    opacity: 90%;
-    width: 50vh;
-    background: transparent;
-    cursor: grab;
-}
-
-.interiorImageOne {
-    position: absolute;
-    z-index: 3;
-    width: 20vh;
-    top: 40vh;
-    left: 10%;
-    transition: 500ms ease-in-out;
-    background: transparent;
-}
-
-.interiorImageOne:hover {
-    opacity: 90%;
-    width: 50vh;
-    background: transparent;
-    cursor: grab;
-}
-
-.storeContainer {
-    width: 86%;
-    height: 80%;
-    overflow-x: auto;
-    scrollbar-color: #999 #242424;
-    position: absolute;
-    z-index: 2;
-    left: 4vh;
-    top: 15vh;
-    /* border: 1px darkkhaki dotted; */
-    border-radius: .5%;
-    background: transparent;
-}
-
-.secondBackground {
-    height: auto;
+.mainClothingContainer {
+    height: 100vh;
     width: 100%;
-    position: absolute;
-    z-index: 0;
-    top: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1%;
 }
 
-.closeButtonA {
-    right: 16%;
-    height: 2vh;
-    width: 2vh;
-    position: fixed;
-    color: darkgrey;
-    font-size: 22px;
-    background-color: #242424;
-    border-radius: 50%;
+.clothingItemsContainer {
+    margin: 2%;
+    display: flex;
+    width: 20%;
+    height: 500x;
+    justify-content: space-evenly;
 }
 
-.closeButtonB {
-    right: 14%;
-    height: 2vh;
-    width: 2vh;
-    position: fixed;
-    color: darkgrey;
-    font-size: 22px;
-    background-color: #242424;
-    border-radius: 50%;
+.itemOne {
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
 }
 
-.closeButtonC {
-    right: 12%;
-    height: 2vh;
-    width: 2vh;
-    position: fixed;
-    color: darkgrey;
-    font-size: 22px;
-    background-color: maroon;
-    border-radius: 50%;
+.itemTwo {
+    height: 300px;
+    width: 300px;
+    color: aliceblue;
+    background-color: black;
+}
+
+.itemThree {
+    height: 300px;
+    width: 300px;
+    background-color: blanchedalmond;
+}
+
+.itemFour {
+    height: 300px;
+    width: 300px;
+    background-color: cadetblue;
 }

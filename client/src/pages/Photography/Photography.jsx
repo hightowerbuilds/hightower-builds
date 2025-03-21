@@ -28,9 +28,7 @@ export default function Photography() {
         <NavBar />
         Photography
 
-        <div className="mainContentPhotography">
-      
-        </div>
+       
     </div>
   )
 }

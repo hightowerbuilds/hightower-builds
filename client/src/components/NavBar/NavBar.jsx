@@ -59,12 +59,10 @@ export default function NavBar() {
   return (
  <div className="navBarContainer">
 
-    <NavLink to='/'>{homeButton ? <img className='homeButton' src={homeButton}></img>: 'loading'}</NavLink>
-    <NavLink> <img className='homeButton'  src={writingButton}></img></NavLink>
-    <NavLink to='/clothing'>{clothingButton ? <img className='clothingButton' src={clothingButton}></img> : 'loading'}</NavLink>
-    <NavLink to='/photography'> <img className='homeButton' src={photographyButton}></img></NavLink>
-    <NavLink to='/webdev'>{ webDevButton ? <img className='webDevButton' src={webDevButton}/> : 'loading'}</NavLink>
-    <NavLink to='/contact'>{contactButton ? <img className='contactButton' src={contactButton} /> : 'loading'}</NavLink>
+    <NavLink to='/'>{homeButton ? 'home': 'loading'}</NavLink>
+    <NavLink to='/clothing'>{clothingButton ? 'clothing' : 'loading'}</NavLink>
+    <NavLink to='/photography'> {'photography'} </NavLink>
+    <NavLink to='/contact'>{contactButton ? 'contact': 'loading'}</NavLink>
 
  </div>
   )
