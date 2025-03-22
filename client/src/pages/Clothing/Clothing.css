@@ -39,3 +39,27 @@
     width: 300px;
     background-color: cadetblue;
 }
+
+.blueArrow {
+    position: absolute;
+    height: 1000px;
+    width: 1200px;
+    border: 1px blue dotted;
+    left: 8%;
+    top: 55%;
+}
+
+.interiorBlueArrow {
+    position: absolute;
+    top: 2%;
+    right: 2%
+}
+
+.imagesBlueArrow {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    border: 1px blue solid;
+    height: 100px;
+    width: 900px;
+}
