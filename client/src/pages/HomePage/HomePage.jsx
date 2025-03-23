@@ -12,7 +12,9 @@ export default function HomePage() {
   
           <NavBar />
         
-          home
+        <p style={{ position: 'absolute', left: '50%', top: '30%', fontSize: '38px'}}>
+        home
+        </p> 
        
       </div> 
       

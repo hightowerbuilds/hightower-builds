@@ -26,8 +26,9 @@ export default function Photography() {
 
     }}>
         <NavBar />
-        Photography
-
+        <p style={{ position: 'absolute', left: '50%', top: '30%', fontSize: '38px'}}>
+        photography
+        </p> 
        
     </div>
   )
