@@ -9,15 +9,37 @@ export default function Store() {
 const [arrow, setArrow] = useState(false)
 
 const [ eagleStalk, setEagleStalk ] = useState();
+const [ distantEagle, setDistantEagle ] = useState();
+const [ eagleCloseUp, setEagleCloseUp ] = useState();
+const [ eagleStick, setEagleStick ] = useState();
+
+
 
 useEffect(() => {
-  const fetchPortrait = async () => {
-    const { data, error } = await supabase.storage.from('images').getPublicUrl('eagle-photos/eagleStalk.jpg');
-   setEagleStalk(data.publicUrl)
-    }
-  
-    fetchPortrait();
 
+ const fetchImages = async () => {
+
+  const images = [
+    {path: 'eagle-photos/eagleStalk.jpg', setPath: setEagleStalk},
+    {path: 'eagle-photos/distant-eagle.JPG', setPath: setDistantEagle },
+    {path: 'eagle-photos/eagle-closeup-2.JPG', setPath: setEagleCloseUp },
+    {path: 'eagle-photos/eagle-stick-2.JPG', setPath: setEagleStick },
+  ]
+  
+  const fetchImageBank = images.map(async (image) => {
+  
+    const { data, error } = await supabase.storage.from('images').getPublicUrl(image.path)
+    if (data) { 
+      image.setPath(data.publicUrl)
+    } else {
+      console.log('error fetching images', error)
+    } 
+  });
+  
+  await Promise.all(fetchImageBank)
+  
+ } 
+  fetchImages();
 }, [])
 
 
@@ -31,7 +53,6 @@ const handleArrow = () => {
 
 
 /**
- * 
  * 
  *  create a bank of images for each item within each clothing-type
  *    
@@ -101,9 +122,9 @@ const handleArrow = () => {
               <button style={{marginLeft: '90%', marginBottom: '2%', height: '30px'}}>buy this </button>
 
               <div className='imageSubBank'>
-                <img src="" className='subImageA' />
-                <img src="" className='subImageA' />
-                <img src="" className='subImageA' />
+                <img src={distantEagle} className='subImageA' />
+                <img src={eagleCloseUp} className='subImageA' />
+                <img src={eagleStick} className='subImageA' />
               </div>
             </div>
 
