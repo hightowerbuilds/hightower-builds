@@ -1,7 +1,7 @@
 .mainClothingContainer {
     height: 70vh;
     width: 100%;
-    display: flex;
+    /* display: flex; */
     /* justify-content: start; */
     align-items: center;
     padding: 1%;
