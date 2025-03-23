@@ -51,7 +51,7 @@ const handleArrow = () => {
   }
  }
 
-
+ const stage = [ eagleStalk, eagleCloseUp, eagleStick, distantEagle ]
 /**
  * 
  *  create a bank of images for each item within each clothing-type
@@ -62,7 +62,7 @@ const handleArrow = () => {
  *  item D - img1, img2, img3, img4
  * 
  * 
- *  within image bank we need an ablity to rotate the images in the placement
+ *  within image bank we need an ablity to switch the images in the placement
  *  there will be a large main photo but if the user clicks on a lower photo
  *  the large photo is replace and the small photo becomes the past choice
  *  
@@ -118,13 +118,13 @@ const handleArrow = () => {
           <div className='blueArrow'>
 
             <div className='imagesBlueArrow'>
-              <img src={eagleStalk} className='imageMain' />
+              <img src={stage[0]} className='imageMain' />
               <button style={{marginLeft: '90%', marginBottom: '2%', height: '30px'}}>buy this </button>
 
               <div className='imageSubBank'>
-                <img src={distantEagle} className='subImageA' />
-                <img src={eagleCloseUp} className='subImageA' />
-                <img src={eagleStick} className='subImageA' />
+                <img src={stage[1]} className='subImageA' />
+                <img src={stage[2]} className='subImageA' />
+                <img src={stage[3]} className='subImageA' />
               </div>
             </div>
 

@@ -8,15 +8,6 @@ export default function Photography() {
 
     const [ photoOne, setPhotoOne ] = useState()
 
-    // useEffect(() => {
-    //     async function fetchImages() {
-    //             const { data, error } = await supabase.storage.from('images').getPublicUrl('eagle-photos/eagleStalk.jpg');
-    //             setPhotoOne(data.publicUrl)
-    //       }
-      
-    //       fetchImages();
-    // }, [])
-
 
 
 
