@@ -33,10 +33,6 @@ const handleArrow = () => {
 /**
  * 
  * 
- * 
- * 
- * 
- * 
  *  create a bank of images for each item within each clothing-type
  *    
  *  item A - img1, img2, img3, img4 
@@ -59,7 +55,7 @@ const handleArrow = () => {
       <NavBar />  
 
       <div className='mainClothingContainer'>
-        <h2>clothing</h2>
+      
 
         <div className='clothingItemsContainer'>
           <div>
