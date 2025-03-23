@@ -2,11 +2,23 @@
 import './Clothing.css'
 import NavBar from "../../components/NavBar/NavBar"
 import { useState, useEffect } from 'react'
-
+import { supabase } from '../../services/supabase';
 
 export default function Store() {
 
 const [arrow, setArrow] = useState(false)
+
+const [ eagleStalk, setEagleStalk ] = useState();
+
+useEffect(() => {
+  const fetchPortrait = async () => {
+    const { data, error } = await supabase.storage.from('images').getPublicUrl('eagle-photos/eagleStalk.jpg');
+   setEagleStalk(data.publicUrl)
+    }
+  
+    fetchPortrait();
+
+}, [])
 
 
 const handleArrow = () => {
@@ -19,7 +31,13 @@ const handleArrow = () => {
 
 
 /**
- *  create a bank of images for eachg item within each clothing-type
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  create a bank of images for each item within each clothing-type
  *    
  *  item A - img1, img2, img3, img4 
  *  item B - img1, img2, img3, img4
@@ -83,12 +101,13 @@ const handleArrow = () => {
           <div className='blueArrow'>
 
             <div className='imagesBlueArrow'>
-              <img src="" className='imageMain' />
+              <img src={eagleStalk} className='imageMain' />
+              <button style={{marginLeft: '90%', marginBottom: '2%', height: '30px'}}>buy this </button>
 
               <div className='imageSubBank'>
-                <img src="" alt="" />
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <img src="" className='subImageA' />
+                <img src="" className='subImageA' />
+                <img src="" className='subImageA' />
               </div>
             </div>
 
