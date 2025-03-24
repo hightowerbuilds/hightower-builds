@@ -13,7 +13,7 @@ const [ distantEagle, setDistantEagle ] = useState();
 const [ eagleCloseUp, setEagleCloseUp ] = useState();
 const [ eagleStick, setEagleStick ] = useState();
 
-
+const [ index, setIndex ] = useState(0);
 
 useEffect(() => {
 
@@ -52,21 +52,16 @@ const handleArrow = () => {
  }
 
  const stage = [ eagleStalk, eagleCloseUp, eagleStick, distantEagle ]
-/**
- * 
- *  create a bank of images for each item within each clothing-type
- *    
- *  item A - img1, img2, img3, img4 
- *  item B - img1, img2, img3, img4
- *  item C - img1, img2, img3, img4
- *  item D - img1, img2, img3, img4
- * 
- * 
- *  within image bank we need an ablity to switch the images in the placement
- *  there will be a large main photo but if the user clicks on a lower photo
- *  the large photo is replace and the small photo becomes the past choice
- *  
- */
+
+ const handlePrev = () => {
+  setIndex((prevIndex) => (prevIndex === 0 ? stage.length - 1 : prevIndex - 1));
+};
+
+const handleNext = () => {
+  setIndex((prevIndex) => (prevIndex === stage.length - 1 ? 0 : prevIndex + 1));
+};
+
+
 
 
 
@@ -118,10 +113,13 @@ const handleArrow = () => {
           <div className='blueArrow'>
 
             <div className='imagesBlueArrow'>
-              <img src={stage[0]} className='imageMain' />
+              <img src={stage[index]} className='imageMain' />
+              <button onClick={handlePrev} style={{marginLeft: '50%'}}>{'<<<'}</button>
+              <button onClick={handleNext}>{'>>>'}</button>
               <button style={{marginLeft: '90%', marginBottom: '2%', height: '30px'}}>buy this </button>
 
               <div className='imageSubBank'>
+                <img src={stage[0]} className='subImageA'/>
                 <img src={stage[1]} className='subImageA' />
                 <img src={stage[2]} className='subImageA' />
                 <img src={stage[3]} className='subImageA' />
