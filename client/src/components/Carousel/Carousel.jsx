@@ -1,4 +1,7 @@
+
+import './Carousel.css'
 import { useState } from "react";
+
 
 export default function Carousel(props) {
 
@@ -42,10 +45,10 @@ export default function Carousel(props) {
 
             <div className='interiorBlueArrow'>
 
-            <p onClick={() => {setItem(0)}}>pants A</p>
-            <p onClick={() => {setItem(1)}}>pants B</p>
-            <p onClick={() => {setItem(2)}}>pants C</p>
-            <p onClick={() => {setItem(3)}}>pants D</p>
+            <p className="carouselItem" onClick={() => {setItem(0)}}>{props.firstItem}</p>
+            <p className="carouselItem" onClick={() => {setItem(1)}}>{props.secondItem}</p>
+            <p className="carouselItem" onClick={() => {setItem(2)}}>{props.thirdItem}</p>
+            <p className="carouselItem" onClick={() => {setItem(3)}}>{props.fourthItem}</p>
 
             </div>
 

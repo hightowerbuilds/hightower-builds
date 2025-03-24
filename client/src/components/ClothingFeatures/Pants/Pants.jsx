@@ -67,6 +67,11 @@ export default function Pants() {
   return (
     <div className='blueArrow'>
       <Carousel 
+        firstItem={'eagles'}
+        secondItem={'nature one'}
+        thirdItem={'nature two'}
+        fourthItem={'nature three'}
+
         photoZero={eagleStalk}
         photoOne={distantEagle}
         photoTwo={eagleCloseUp}

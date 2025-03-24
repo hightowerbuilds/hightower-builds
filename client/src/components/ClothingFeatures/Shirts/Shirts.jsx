@@ -1,6 +1,8 @@
 
 export default function Shirts() {
   return (
-    <div>ClothingShirts</div>
+    <div>
+      shirts
+    </div>
   )
 }
