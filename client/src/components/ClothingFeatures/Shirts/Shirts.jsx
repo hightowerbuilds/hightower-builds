@@ -15,7 +15,7 @@ useEffect(() => {
   const fetchImages = async () => {
 
     const images = [
-      {path:  'clothes/tieDye.jpeg', setPath: setTieDye},
+      {path:  'clothes/tieDyeShirt.jpeg', setPath: setTieDye},
       {path: 'clothes/grannyShirt.jpeg', setPath: setGrannyShirt},
       {path: 'clothes/ladyShirt.jpeg', setPath: setLadyShirt},
       {path: 'clothes/dogShirt.jpeg', setPath: setDogShirt}
@@ -40,13 +40,18 @@ useEffect(() => {
 
 
  
-  
-
-
 
   return (
-    <div>
-      shirts
+    <div className="blueArrow">
+
+      <Carousel
+        firstItem={'shirts'}
+
+        photoZero={tieDye}
+        photoOne={grannyShirt}
+        photoTwo={ladyShirt}
+        photoThree={dogShirt}
+      />
     </div>
   )
 }
