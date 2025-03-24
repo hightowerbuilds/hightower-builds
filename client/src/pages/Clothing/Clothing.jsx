@@ -1,68 +1,13 @@
 
 import './Clothing.css'
 import NavBar from "../../components/NavBar/NavBar"
-import { useState, useEffect } from 'react'
-import { supabase } from '../../services/supabase';
+import { useState } from 'react'
+import Pants from '../../components/ClothingFeatures/Pants/Pants';
 
 export default function Store() {
 
 const [arrow, setArrow] = useState(false)
-
-const [ eagleStalk, setEagleStalk ] = useState();
-const [ distantEagle, setDistantEagle ] = useState();
-const [ eagleCloseUp, setEagleCloseUp ] = useState();
-const [ eagleStick, setEagleStick ] = useState();
-
-const [ index, setIndex ] = useState(0);
-
-useEffect(() => {
-
- const fetchImages = async () => {
-
-  const images = [
-    {path: 'eagle-photos/eagleStalk.jpg', setPath: setEagleStalk},
-    {path: 'eagle-photos/distant-eagle.JPG', setPath: setDistantEagle },
-    {path: 'eagle-photos/eagle-closeup-2.JPG', setPath: setEagleCloseUp },
-    {path: 'eagle-photos/eagle-stick-2.JPG', setPath: setEagleStick },
-  ]
-  
-  const fetchImageBank = images.map(async (image) => {
-  
-    const { data, error } = await supabase.storage.from('images').getPublicUrl(image.path)
-    if (data) { 
-      image.setPath(data.publicUrl)
-    } else {
-      console.log('error fetching images', error)
-    } 
-  });
-  
-  await Promise.all(fetchImageBank)
-  
- } 
-  fetchImages();
-}, [])
-
-
-const handleArrow = () => {
-  if (arrow === false){
-    setArrow(true)
-  } else {
-    setArrow(false)
-  }
- }
-
- const stage = [ eagleStalk, eagleCloseUp, eagleStick, distantEagle ]
-
- const handlePrev = () => {
-  setIndex((prevIndex) => (prevIndex === 0 ? stage.length - 1 : prevIndex - 1));
-};
-
-const handleNext = () => {
-  setIndex((prevIndex) => (prevIndex === stage.length - 1 ? 0 : prevIndex + 1));
-};
-
-
-
+const handleArrow = () => { arrow ? setArrow(false) : setArrow(true)}
 
 
   return (
@@ -109,33 +54,7 @@ const handleNext = () => {
         </div>
 
         {
-          arrow ?       
-          <div className='blueArrow'>
-
-            <div className='imagesBlueArrow'>
-              <img src={stage[index]} className='imageMain' />
-              <button onClick={handlePrev} style={{marginLeft: '50%'}}>{'<<<'}</button>
-              <button onClick={handleNext}>{'>>>'}</button>
-              <button style={{marginLeft: '90%', marginBottom: '2%', height: '30px'}}>buy this </button>
-
-              <div className='imageSubBank'>
-                <img src={stage[0]} className='subImageA'/>
-                <img src={stage[1]} className='subImageA' />
-                <img src={stage[2]} className='subImageA' />
-                <img src={stage[3]} className='subImageA' />
-              </div>
-            </div>
-
-            <div className='interiorBlueArrow'>
-
-              <p>pants A</p>
-              <p>pants B</p>
-              <p>pants C</p>
-              <p>pants D</p>
-         
-            </div>
-
-          </div> : ''
+          arrow ?  <Pants />: ''
         }
         
       </div>
