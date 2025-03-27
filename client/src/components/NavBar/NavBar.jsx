@@ -1,54 +1,54 @@
-
-import './NavBar.css'
-import { NavLink } from "react-router-dom"
-import { useEffect, useState } from "react"
+import './NavBar.css';
+import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { supabase } from '../../services/supabase';
 
 export default function NavBar() {
-
-  const [ homeButton, setHomeButton ] = useState();
-  const [ clothingButton, setClothingButton ] = useState();
-  const [ contactButton, setContactButton ] = useState();
-  const [ photographyButton, setPhotographyButton ] = useState();
-  
+  const [navBarImages, setNavBarImages ] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchHomeButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/homePageSketch.png')
-      setHomeButton(data.publicUrl)
-    }
-    
-    const fetchClothingButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/clothingSketch.png')
-      setClothingButton(data.publicUrl)
-    }
+    const fetchNavImages = async () => {
+      try {
+        const imagePaths = [
+          { path: '/', image: 'words/homePageSketch.png' },
+          { path: '/clothing', image: 'words/clothingSketch.png' },
+          { path: '/photography', image: 'words/photography-sketch.png' },
+          { path: '/contact', image: 'words/contactSketch.png' },
+        ];
 
-    const fetchContactButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/contactSketch.png')
-      setContactButton(data.publicUrl)
-    }
+        const images = imagePaths.map(async (item) => {
+          const { data } = await supabase.storage.from('images').getPublicUrl(item.image);
+          return { ...item, imageUrl: data.publicUrl };
+        });
 
-    const fetchPhotographyButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/photography-sketch.png')
-      setPhotographyButton(data.publicUrl)
-    }
+        const resolvedImages = await Promise.all(images);
+        setNavBarImages(resolvedImages);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching images:', error);
+        setLoading(false);
+      }
+    };
 
-    fetchHomeButton();
-    fetchClothingButton();
-    fetchContactButton();
-    fetchPhotographyButton();
+    fetchNavImages();
+  }, []);
 
-  }, [])
+  if (loading) {
+    return <div>Loading navigation...</div>;
+  }
 
- 
   return (
- <div className="navBarContainer">
-
-    <NavLink to='/'>{homeButton ? <img className='navBarButtons' src={homeButton}/> : 'loading'}</NavLink>
-    <NavLink to='/clothing'>{clothingButton ? <img className='navBarButtons' src={clothingButton} alt="" /> : 'loading'}</NavLink>
-    <NavLink to='/photography'>{ photographyButton ? <img className='navBarButtons' src={photographyButton}/> : 'loading' }</NavLink>
-    <NavLink to='/contact'>{contactButton ? <img className='navBarButtons' src={contactButton} /> : 'loading'}</NavLink>
-
- </div>
-  )
+    <div className="navBarContainer">
+      {navBarImages.map((item) => (
+        <NavLink key={item.path} to={item.path}>
+          {item.imageUrl ? (
+            <img className="navBarButtons" src={item.imageUrl} alt="" />
+          ) : (
+            'Image not available'
+          )}
+        </NavLink>
+      ))}
+    </div>
+  );
 }

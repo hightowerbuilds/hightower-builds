@@ -3,7 +3,6 @@
     z-index: 2;
     margin-left: 3%;
     margin-top: 1%;
-    font-family: 'Courier New', Courier, monospace;
     width: 900px;
     display: flex;
     justify-content: space-around;
@@ -15,20 +14,3 @@
     background: inherit;
 }
 
-.clothingButton {
-    margin-top: 20px;
-    width: 190px; 
-    background: transparent;
-}
-
-.webDevButton {
-    margin-top: 10px;
-    width: 190px;
-    background: transparent;
-}
-
-.contactButton {
-    margin-top: 20px;
-    width: 190px;
-    background: transparent;
-}
