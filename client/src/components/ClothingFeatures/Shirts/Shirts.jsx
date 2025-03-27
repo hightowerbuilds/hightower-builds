@@ -9,8 +9,12 @@ const [ tieDye , setTieDye ] = useState();
 const [ grannyShirt, setGrannyShirt ] = useState();
 const [ ladyShirt, setLadyShirt ] = useState();
 const [ dogShirt, setDogShirt ] = useState();
+const [loadingTime, setLoadingTime] = useState(null);
+
 
 useEffect(() => {
+  const startTime = performance.now(); 
+
 
   const fetchImages = async () => {
 
@@ -29,6 +33,8 @@ useEffect(() => {
       } else {
         console.log('error fetching images', error)
       }
+      const endTime = performance.now(); // End timing
+      setLoadingTime(endTime - startTime);
     });
     
   await Promise.all(fetchImageBank)
@@ -43,7 +49,9 @@ useEffect(() => {
 
   return (
     <div className="blueArrow">
-
+       {loadingTime !== null && (
+        <p>Image loading time: {loadingTime.toFixed(2)} milliseconds</p>
+      )}
       <Carousel
         firstItem={'shirts'}
 

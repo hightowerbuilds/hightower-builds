@@ -6,39 +6,26 @@ import { supabase } from '../../services/supabase';
 
 export default function NavBar() {
 
-
   const [ homeButton, setHomeButton ] = useState();
   const [ clothingButton, setClothingButton ] = useState();
-  const [ webDevButton, setWebDevButton ] = useState();
   const [ contactButton, setContactButton ] = useState();
-  const [ writingButton, setWritingButton ] = useState();
   const [ photographyButton, setPhotographyButton ] = useState();
   
 
   useEffect(() => {
     const fetchHomeButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/home-sketch.png')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/homePageSketch.png')
       setHomeButton(data.publicUrl)
     }
     
     const fetchClothingButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/clothing-sketch.png')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/clothingSketch.png')
       setClothingButton(data.publicUrl)
     }
 
-    const fetchWebDevButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/webdev-sketch.png')
-      setWebDevButton(data.publicUrl)
-    }
-
     const fetchContactButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/contact-sketch.png')
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/contactSketch.png')
       setContactButton(data.publicUrl)
-    }
-
-    const fetchWritingButton = async () => {
-      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/writing-sketch.png')
-      setWritingButton(data.publicUrl)
     }
 
     const fetchPhotographyButton = async () => {
@@ -48,9 +35,7 @@ export default function NavBar() {
 
     fetchHomeButton();
     fetchClothingButton();
-    fetchWebDevButton();
     fetchContactButton();
-    fetchWritingButton();
     fetchPhotographyButton();
 
   }, [])
@@ -59,10 +44,10 @@ export default function NavBar() {
   return (
  <div className="navBarContainer">
 
-    <NavLink to='/'>{homeButton ? 'home': 'loading'}</NavLink>
-    <NavLink to='/clothing'>{clothingButton ? 'clothing' : 'loading'}</NavLink>
-    <NavLink to='/photography'> {'photography'} </NavLink>
-    <NavLink to='/contact'>{contactButton ? 'contact': 'loading'}</NavLink>
+    <NavLink to='/'>{homeButton ? <img className='navBarButtons' src={homeButton}/> : 'loading'}</NavLink>
+    <NavLink to='/clothing'>{clothingButton ? <img className='navBarButtons' src={clothingButton} alt="" /> : 'loading'}</NavLink>
+    <NavLink to='/photography'>{ photographyButton ? <img className='navBarButtons' src={photographyButton}/> : 'loading' }</NavLink>
+    <NavLink to='/contact'>{contactButton ? <img className='navBarButtons' src={contactButton} /> : 'loading'}</NavLink>
 
  </div>
   )

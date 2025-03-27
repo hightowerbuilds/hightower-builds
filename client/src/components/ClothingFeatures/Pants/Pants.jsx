@@ -1,96 +1,87 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { supabase } from '../../../services/supabase';
 import Carousel from '../../Carousel/Carousel';
 
 export default function Pants() {
+  const [imageUrls, setImageUrls] = useState({});
+  const [loadingTime, setLoadingTime] = useState(null);
 
-  const [ eagleStalk, setEagleStalk ] = useState();
-  const [ distantEagle, setDistantEagle ] = useState();
-  const [ eagleCloseUp, setEagleCloseUp ] = useState();
-  const [ eagleStick, setEagleStick ] = useState();
-  const [ beautifulUgly, setBeautifulUgly ] = useState();
-  const [ fernsUnfurl, setFernsUnfurl ] = useState();
-  const [ forestLongView, setForestLongView ] = useState();
-  const [ weirdDeer, setWeirdDeer ] = useState();
-  const [ tireTracks, setTireTracks ] = useState();
-  const [ mossForest, setMossForest ] = useState();
-  const [ greenGrass, setGreenGrass ] = useState();
-  const [ grassWithSeed, setGrassWithSeed ] = useState();
-  const [ grass, setGrass ] = useState();
-  const [ aloePlant, setAloePlant ] = useState();
-  const [ blueSky, setBlueSky ] = useState();
-  const [ ceilingLight, setCeilingLight ] = useState();
-
-  
   useEffect(() => {
-  
-   const fetchImages = async () => {
-  
-    const images = [
-      {path: 'eagle-photos/eagleStalk.jpg', setPath: setEagleStalk},
-      {path: 'eagle-photos/distant-eagle.JPG', setPath: setDistantEagle },
-      {path: 'eagle-photos/eagle-closeup-2.JPG', setPath: setEagleCloseUp },
-      {path: 'eagle-photos/eagle-stick-2.JPG', setPath: setEagleStick },
-      {path: 'landscape/beautifulUgly.JPG', setPath: setBeautifulUgly},
-      {path: 'landscape/fernsUnfurl.JPG', setPath: setFernsUnfurl},
-      {path: 'landscape/forestLongView.JPG', setPath: setForestLongView},
-      {path: 'landscape/weirdDeer.JPG', setPath: setWeirdDeer},
-      {path: 'landscape/tireTracks.JPG', setPath: setTireTracks},
-      {path: 'landscape/moss-forest.jpg', setPath: setMossForest},
-      {path: 'landscape/greenGrass.JPG', setPath: setGreenGrass},
-      {path: 'landscape/grassWithSeed.JPG', setPath: setGrassWithSeed},
-      {path: 'landscape/grass.JPG', setPath: setGrass},
-      {path: 'webdev/aloePlant.JPG', setPath: setAloePlant},
-      {path: 'webdev/blueSky.JPG', setPath: setBlueSky},
-      {path: 'webdev/ceilingLight.JPG', setPath: setCeilingLight}
-    ]
-    
-    const fetchImageBank = images.map(async (image) => {
-    
-      const { data, error } = await supabase.storage.from('images').getPublicUrl(image.path)
-      if (data) { 
-        image.setPath(data.publicUrl)
-      } else {
-        console.log('error fetching images', error)
-      } 
-    });
-    
-    await Promise.all(fetchImageBank)
-    
-   } 
+    const startTime = performance.now(); 
+
+    const fetchImages = async () => {
+      const imagePaths = {
+        eagleStalk: 'eagle-photos/eagleStalk.jpg',
+        distantEagle: 'eagle-photos/distant-eagle.JPG',
+        eagleCloseUp: 'eagle-photos/eagle-closeup-2.JPG',
+        eagleStick: 'eagle-photos/eagle-stick-2.JPG',
+        beautifulUgly: 'landscape/beautifulUgly.JPG',
+        fernsUnfurl: 'landscape/fernsUnfurl.JPG',
+        forestLongView: 'landscape/forestLongView.JPG',
+        weirdDeer: 'landscape/weirdDeer.JPG',
+        tireTracks: 'landscape/tireTracks.JPG',
+        mossForest: 'landscape/moss-forest.jpg',
+        greenGrass: 'landscape/greenGrass.JPG',
+        grassWithSeed: 'landscape/grassWithSeed.JPG',
+        grass: 'landscape/grass.JPG',
+        aloePlant: 'webdev/aloePlant.JPG',
+        blueSky: 'webdev/blueSky.JPG',
+        ceilingLight: 'webdev/ceilingLight.JPG',
+      };
+
+      const fetchImagePromises = Object.entries(imagePaths).map(
+        async ([key, path]) => {
+          const { data, error } = await supabase.storage
+            .from('images')
+            .getPublicUrl(path);
+
+          if (data) {
+            return { [key]: data.publicUrl };
+          } else {
+            console.error(`Error fetching image ${path}:`, error);
+            return { [key]: null }; 
+          }
+        }
+      );
+
+      const results = await Promise.all(fetchImagePromises);
+      const imageUrlsObject = results.reduce((acc, current) => ({ ...acc, ...current }), {});
+      setImageUrls(imageUrlsObject);
+
+      const endTime = performance.now(); 
+      setLoadingTime(endTime - startTime); 
+    };
+
     fetchImages();
-  }, [])
-
-
-
+  }, []);
 
   return (
-    <div className='blueArrow'>
-      <Carousel 
+    <div className="blueArrow">
+      {loadingTime !== null && (
+        <p>Image loading time: {loadingTime.toFixed(2)} milliseconds</p>
+      )}
+      <Carousel
         firstItem={'eagles'}
         secondItem={'nature one'}
         thirdItem={'nature two'}
         fourthItem={'nature three'}
-
-        photoZero={eagleStalk}
-        photoOne={distantEagle}
-        photoTwo={eagleCloseUp}
-        photoThree={eagleStick}
-        photoZeroA={beautifulUgly} 
-        photoOneA={fernsUnfurl}
-        photoTwoA={forestLongView}
-        photoThreeA={weirdDeer}
-        photoZeroB={tireTracks}
-        photoOneB={mossForest}
-        photoTwoB={greenGrass}
-        photoThreeB={grassWithSeed}
-        photoZeroC={grass}
-        photoOneC={aloePlant}
-        photoTwoC={blueSky}
-        photoThreeC={ceilingLight}
+        photoZero={imageUrls.eagleStalk}
+        photoOne={imageUrls.distantEagle}
+        photoTwo={imageUrls.eagleCloseUp}
+        photoThree={imageUrls.eagleStick}
+        photoZeroA={imageUrls.beautifulUgly}
+        photoOneA={imageUrls.fernsUnfurl}
+        photoTwoA={imageUrls.forestLongView}
+        photoThreeA={imageUrls.weirdDeer}
+        photoZeroB={imageUrls.tireTracks}
+        photoOneB={imageUrls.mossForest}
+        photoTwoB={imageUrls.greenGrass}
+        photoThreeB={imageUrls.grassWithSeed}
+        photoZeroC={imageUrls.grass}
+        photoOneC={imageUrls.aloePlant}
+        photoTwoC={imageUrls.blueSky}
+        photoThreeC={imageUrls.ceilingLight}
       />
-
-      
-    </div> 
-  )
+    </div>
+  );
 }
