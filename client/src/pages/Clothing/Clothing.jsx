@@ -62,19 +62,19 @@ useEffect(() => {
 
       <div className='mainClothingContainer'>
         <div className='clothingItemsContainer'>
-            <div onClick={() => {clothingFeature ? setClothingFeature() :  setClothingFeature(components.sweatshirts)}}>
+            <div onClick={() => {setClothingFeature(components.sweatshirts)}}>
             <img src={sweatShirt} className='clothingFeatureImage' />
             </div>
 
-            <div onClick={() => {clothingFeature ? setClothingFeature() : setClothingFeature(components.shirts)}}>
+            <div onClick={() => {setClothingFeature(components.shirts)}}>
             <img src={shirt} className='clothingFeatureImage' />
             </div>
 
-            <div onClick={() => {clothingFeature ? setClothingFeature() : setClothingFeature(components.bags)}}>
+            <div onClick={() => {setClothingFeature(components.bags)}}>
             <img src={bag} className='clothingFeatureImage' />
             </div>
 
-            <div onClick={() => {clothingFeature ? setClothingFeature() : setClothingFeature(components.pants)}} >
+            <div onClick={() => {setClothingFeature(components.pants)}} >
             <img src={pant} className='clothingFeatureImage' />
             </div>
         </div>
