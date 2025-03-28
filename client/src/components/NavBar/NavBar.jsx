@@ -12,7 +12,7 @@ export default function NavBar() {
       try {
         const imagePaths = [
           { path: '/', image: 'words/homePageSketch.png' },
-          { path: '/clothing', image: 'words/clothingSketch.png' },
+          { path: '/store', image: 'words/clothingSketch.png' },
           { path: '/photography', image: 'words/photography-sketch.png' },
           { path: '/contact', image: 'words/contactSketch.png' },
         ];
