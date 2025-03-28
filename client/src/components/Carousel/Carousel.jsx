@@ -49,7 +49,7 @@ export default function Carousel({
     <div>
       <div>
         <div className="imagesBlueArrow">
-          <img src={stageHolder[item][index]} className="imageMain" alt="Carousel Main" />
+          <img src={stageHolder[item][index]} className="imageMain"  />
           <button onClick={handlePrev} style={{ marginLeft: '50%' }}>
             {'<<<'}
           </button>

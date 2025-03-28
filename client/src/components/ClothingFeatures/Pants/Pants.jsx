@@ -58,7 +58,7 @@ export default function Pants() {
   return (
     <div className="blueArrow">
       {loadingTime !== null && (
-        <p>Image loading time: {loadingTime.toFixed(2)} milliseconds</p>
+      console.log(loadingTime.toFixed(2))
       )}
       <Carousel
         firstItem={'eagles'}

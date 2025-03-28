@@ -1,8 +1,9 @@
 
 import './Clothing.css'
-//library
-import { useState } from 'react'
-//components
+
+import { useState, useEffect } from 'react'
+import { supabase } from '../../services/supabase';
+
 import NavBar from "../../components/NavBar/NavBar"
 import Pants from '../../components/ClothingFeatures/Pants/Pants';
 import Shirts from '../../components/ClothingFeatures/Shirts/Shirts';
@@ -11,13 +12,48 @@ import Bags from '../../components/ClothingFeatures/Bags/Bags'
 
 export default function Store() {
 
-const [clothingFeature, setClothingFeature] = useState('')
-const components = {
-  pants:        <Pants />,
-  shirts:       <Shirts />,
-  sweatshirts:  <Sweatshirts />,
-  bags:         <Bags />
-}
+  const [clothingFeature, setClothingFeature] = useState()
+  const [sweatShirt, setSweatShirt] = useState();
+  const [shirt, setShirt] = useState();
+  const [bag, setBag] = useState();
+  const [pant, setPant] = useState();
+
+  const components = {
+      pants:        <Pants />,
+      shirts:       <Shirts />,
+      sweatshirts:  <Sweatshirts />,
+      bags:         <Bags />
+  }
+
+useEffect(() => {
+
+    const fetchSweatShirt = async () => {
+      const { data, error } = await supabase.storage.from('images').getPublicUrl('words/sweatshirtSketch.png');
+      setSweatShirt(data.publicUrl)
+      }
+
+      const fetchShirt = async () => {
+        const { data, error } = await supabase.storage.from('images').getPublicUrl('words/shirtsSketch.png')
+        setShirt(data.publicUrl)
+      }
+
+      const fetchBag = async () => {
+        const { data, error } = await supabase.storage.from('images').getPublicUrl('words/bagsSketch.png')
+        setBag(data.publicUrl)
+      }
+
+      const fetchPant = async () => {
+        const { data, error } = await supabase.storage.from('images').getPublicUrl('words/pantsSketch.png')
+        setPant(data.publicUrl)
+      }
+
+      fetchPant();
+      fetchBag();
+      fetchShirt();    
+      fetchSweatShirt();
+}, [])
+
+
 
   return (
     <div >
@@ -25,46 +61,25 @@ const components = {
       <NavBar />  
 
       <div className='mainClothingContainer'>
-      
-
         <div className='clothingItemsContainer'>
-          <div>
-            <h4> where your pants?</h4>
-
-            <div className='itemOne' onClick={() => {setClothingFeature(components.pants)}} >
-              blue jeans
+            <div onClick={() => {clothingFeature ? setClothingFeature() :  setClothingFeature(components.sweatshirts)}}>
+            <img src={sweatShirt} className='clothingFeatureImage' />
             </div>
-          </div>
 
-          <div>
-            <h4>sweatshirt</h4>
-
-            <div className='itemTwo' onClick={() => {setClothingFeature(components.sweatshirts)}}>
-              black hoodie
+            <div onClick={() => {clothingFeature ? setClothingFeature() : setClothingFeature(components.shirts)}}>
+            <img src={shirt} className='clothingFeatureImage' />
             </div>
-          </div>
-      
-          <div>
-            <h4>shirt</h4>
 
-            <div className='itemThree' onClick={() => {setClothingFeature(components.shirts)}}>
-              so many shirts it hurts
+            <div onClick={() => {clothingFeature ? setClothingFeature() : setClothingFeature(components.bags)}}>
+            <img src={bag} className='clothingFeatureImage' />
             </div>
-          </div>
 
-          <div>
-            <h4>bag</h4>
-
-            <div className='itemFour' onClick={() => {setClothingFeature(components.bags)}}>
-             bag full of backpack
+            <div onClick={() => {clothingFeature ? setClothingFeature() : setClothingFeature(components.pants)}} >
+            <img src={pant} className='clothingFeatureImage' />
             </div>
-          </div>
-
         </div>
 
-        {
-       clothingFeature
-        }
+        {clothingFeature}
         
       </div>
  

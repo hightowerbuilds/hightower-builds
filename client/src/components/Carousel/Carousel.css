@@ -1,3 +1,38 @@
 .carouselItem:hover{
     background-color: rgb(36, 155, 115);
 }
+
+.imagesBlueArrow {
+    position: absolute;
+    left: 2%;
+    height: 500px;
+    width: 1050px;
+}
+
+.imageMain {
+    height: 600px;
+    width: 980px;
+    margin: 3%;
+}
+
+.imageSubBank {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 1100px;
+    height: 360px;
+    margin-left: 3%;
+}
+
+.subImageA {
+    width: 300px;
+    height: 200px;
+}
+
+
+.interiorBlueArrow {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-family: monospace;
+    font-size: 16px;
+}
