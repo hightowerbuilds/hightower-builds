@@ -1,3 +1,7 @@
+.carouselItem {
+    cursor: pointer;
+}
+
 .carouselItem:hover{
     background-color: rgb(36, 155, 115);
 }
