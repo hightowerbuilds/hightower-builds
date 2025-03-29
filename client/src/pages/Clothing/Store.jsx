@@ -1,4 +1,4 @@
-import './Clothing.css';
+import './Store.css';
 import { useState, useEffect } from 'react';
 import { supabase } from '../../services/supabase';
 import NavBar from '../../components/NavBar/NavBar';
