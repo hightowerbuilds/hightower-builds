@@ -11,12 +11,11 @@
     left: 5%;
     width: 85%;
     height: 50%;
-    border: 2px black solid;
 }
 
 .downloaderPhotoGallery {
     position: relative;
-    top: 105%;
+    top: 5%;
     left: 5%;
     width: 85%;
     height: 5vh;
@@ -25,9 +24,12 @@
 
 .thumbnailsPhotoGallery {
     position: relative;
-    top: 110%;
+    top: 10%;
     width: 100%;
     height: 15vh;
     border: 2px black solid;
 }
 
+.mainImage {
+    width: 100%;
+}
