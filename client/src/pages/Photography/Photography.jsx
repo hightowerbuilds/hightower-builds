@@ -13,17 +13,9 @@ export default function Photography() {
 
 
   return (
-    <div style={{
-        width: '100%',
-
-    }}>
+    <div>
         <NavBar />
-        <div >
-        
         <Gallery />
-
-        </div> 
-       
     </div>
   )
 }

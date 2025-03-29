@@ -1,10 +1,11 @@
+import './App.css'
+import Photography from './pages/Photography/Photography'
 import WebDev from './pages/WebDev/WebDev'
 import Store from './pages/Clothing/Store'
 import HomePage from './pages/HomePage/HomePage'
 import Contact from './pages/Contact/Contact'
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Photography from './pages/Photography/Photography'
+
 
 function App() {
   return (

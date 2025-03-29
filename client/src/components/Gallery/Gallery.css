@@ -1,9 +1,33 @@
 
 .galleryMainContainer {
+    margin-top: 15%;
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    position: absolute;
 }
+
+.mainPhotoGallery {
+    position: absolute;
+    left: 5%;
+    width: 85%;
+    height: 50%;
+    border: 2px black solid;
+}
+
+.downloaderPhotoGallery {
+    position: relative;
+    top: 105%;
+    left: 5%;
+    width: 85%;
+    height: 5vh;
+    border: 2px black solid;
+}
+
+.thumbnailsPhotoGallery {
+    position: relative;
+    top: 110%;
+    width: 100%;
+    height: 15vh;
+    border: 2px black solid;
+}
+
