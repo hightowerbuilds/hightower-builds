@@ -25,13 +25,13 @@ export default function Store() {
 
   useEffect(() => {
     const fetchImages = async () => {
-      const imageTypes = ['sweatshirt', 'shirts', 'bags', 'pants'];
+      const imageTypes = ['sweatshirts', 'shirts', 'bags', 'pants'];
       const fetchedImages = {};
 
       for (const type of imageTypes) {
         const { data } = await supabase.storage
           .from('images')
-          .getPublicUrl(`words/${type}Sketch.png`);
+          .getPublicUrl(`words/${type}.png`);
         fetchedImages[`${type}`] = data.publicUrl;
       }
 
@@ -51,7 +51,7 @@ export default function Store() {
       <div className="mainClothingContainer">
         <div className="clothingItemsContainer">
           <div onClick={() => handleFeatureClick('sweatshirts')}>
-            <img src={images.sweatshirt} className="clothingFeatureImage" alt="Sweatshirts" />
+            <img src={images.sweatshirts} className="clothingFeatureImage" alt="Sweatshirts" />
           </div>
           <div onClick={() => handleFeatureClick('shirts')}>
             <img src={images.shirts} className="clothingFeatureImage" alt="Shirts" />
