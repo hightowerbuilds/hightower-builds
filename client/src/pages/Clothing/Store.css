@@ -22,5 +22,10 @@
     height: 150px;
     width: 300px;
     cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.clothingFeatureImage:hover {
+    border-bottom: 2px black solid;
 }
 
