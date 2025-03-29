@@ -63,7 +63,11 @@ export default function Store() {
             <img src={images.pants} className="clothingFeatureImage" alt="Pants" />
           </div>
         </div>
+
+        <div style={{ marginLeft: '8%'}}>
         {clothingFeature}
+        </div>
+        
       </div>
     </div>
   );
