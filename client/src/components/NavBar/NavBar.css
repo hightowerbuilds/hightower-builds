@@ -14,3 +14,7 @@
     background: inherit;
 }
 
+.navBarButtons:hover {
+    border-bottom: 2px black solid;
+    background-color: seashell;
+}

@@ -3,6 +3,7 @@ import './Photograpy.css'
 import NavBar from "../../components/NavBar/NavBar"
 import { supabase } from '../../services/supabase';
 import { useState, useEffect } from 'react'
+import Gallery from '../../components/Gallery/Gallery';
 
 export default function Photography() {
 
@@ -17,9 +18,11 @@ export default function Photography() {
 
     }}>
         <NavBar />
-        <p style={{ position: 'absolute', left: '50%', top: '30%', fontSize: '38px'}}>
-        photography
-        </p> 
+        <div >
+        
+        <Gallery />
+
+        </div> 
        
     </div>
   )
