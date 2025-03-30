@@ -1,10 +1,41 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { supabase } from '../../../services/supabase';
 import Carousel from '../../Carousel/Carousel';
+
+const PerformanceMetrics = ({ loadingTime, dataSize }) => {
+  return (
+    <div className="performance-metrics" style={{ 
+      position: 'fixed', 
+      bottom: '20px', 
+      right: '20px', 
+      background: 'rgba(0, 0, 0, 0.8)', 
+      color: 'white', 
+      padding: '10px', 
+      borderRadius: '5px',
+      fontSize: '14px',
+      zIndex: 1000
+    }}>
+      <div>Loading Time: {loadingTime?.toFixed(2)}ms</div>
+      <div>Data Size: {(dataSize / 1024).toFixed(2)} KB</div>
+    </div>
+  );
+};
+
+PerformanceMetrics.propTypes = {
+  loadingTime: PropTypes.number,
+  dataSize: PropTypes.number
+};
+
+PerformanceMetrics.defaultProps = {
+  loadingTime: null,
+  dataSize: 0
+};
 
 export default function Pants() {
   const [imageUrls, setImageUrls] = useState({});
   const [loadingTime, setLoadingTime] = useState(null);
+  const [dataSize, setDataSize] = useState(0);
 
   useEffect(() => {
     const startTime = performance.now(); 
@@ -29,6 +60,7 @@ export default function Pants() {
         ceilingLight: 'webdev/ceilingLight.JPG',
       };
 
+      let totalDataSize = 0;
       const fetchImagePromises = Object.entries(imagePaths).map(
         async ([key, path]) => {
           const { data, error } = await supabase.storage
@@ -36,6 +68,10 @@ export default function Pants() {
             .getPublicUrl(path);
 
           if (data) {
+            // Fetch the actual image to measure its size
+            const response = await fetch(data.publicUrl);
+            const blob = await response.blob();
+            totalDataSize += blob.size;
             return { [key]: data.publicUrl };
           } else {
             console.error(`Error fetching image ${path}:`, error);
@@ -47,6 +83,7 @@ export default function Pants() {
       const results = await Promise.all(fetchImagePromises);
       const imageUrlsObject = results.reduce((acc, current) => ({ ...acc, ...current }), {});
       setImageUrls(imageUrlsObject);
+      setDataSize(totalDataSize);
 
       const endTime = performance.now(); 
       setLoadingTime(endTime - startTime); 
@@ -57,9 +94,6 @@ export default function Pants() {
 
   return (
     <div className="blueArrow">
-      {loadingTime !== null && (
-      console.log(loadingTime.toFixed(2))
-      )}
       <Carousel
         firstItem={'eagles'}
         secondItem={'nature one'}
@@ -82,6 +116,7 @@ export default function Pants() {
         photoTwoC={imageUrls.blueSky}
         photoThreeC={imageUrls.ceilingLight}
       />
+      <PerformanceMetrics loadingTime={loadingTime} dataSize={dataSize} />
     </div>
   );
 }
