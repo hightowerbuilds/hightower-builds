@@ -2,8 +2,8 @@ import './Gallery.css';
 import { useState, useEffect, useRef } from "react"
 import PropTypes from 'prop-types';
 import { supabase } from '../../services/supabase';
-import { handlePayment } from '../../services/stripe';
-import DonationModal from './DonationModal';
+import DonationModal from '../DonationModal/DonationModal';
+
 
 const PerformanceMetrics = ({ loadingTime, dataSize }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -78,7 +78,7 @@ export default function Gallery({ mainPhoto }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadingTime, setLoadingTime] = useState(null);
   const [dataSize, setDataSize] = useState(0);
-  const [showDonationModal, setShowDonationModal] = useState(false);
+ 
   const thumbnailsRef = useRef(null);
 
   useEffect(() => {
@@ -168,24 +168,7 @@ export default function Gallery({ mainPhoto }) {
     }
   };
 
-  const handleDonateClick = () => {
-    setShowDonationModal(true);
-  };
-
-  const handleDonate = async () => {
-    try {
-      await handlePayment();
-      setShowDonationModal(false);
-      handleDownload();
-    } catch (error) {
-      console.error('Donation failed:', error);
-    }
-  };
-
-  const handleSkipDonation = () => {
-    setShowDonationModal(false);
-    handleDownload();
-  };
+  
 
   return (
     <div className="galleryMainContainer"> 
@@ -210,12 +193,13 @@ export default function Gallery({ mainPhoto }) {
             </select>
             
             <button 
-              onClick={handleDonateClick}
+              onClick={handleDownload}
               disabled={isDownloading}
               className="download-button"
             >
               {isDownloading ? 'Downloading...' : 'Download Photo'}
             </button>
+            <DonationModal />
           </div>
         </div>
 
@@ -246,12 +230,7 @@ export default function Gallery({ mainPhoto }) {
         </div>
       </div>
       <PerformanceMetrics loadingTime={loadingTime} dataSize={dataSize} />
-      <DonationModal
-        isOpen={showDonationModal}
-        onClose={() => setShowDonationModal(false)}
-        onDonate={handleDonate}
-        onSkip={handleSkipDonation}
-      />
+
     </div>
   );
 }

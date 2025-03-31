@@ -1,5 +1,4 @@
 .galleryMainContainer {
-    margin-top: 15%;
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -7,9 +6,9 @@
 
 .mainPhotoGallery {
     position: absolute;
-    left: 5%;
-    width: 85%;
-    height: 50%;
+    /* left: 5%; */
+    width: 100%;
+    height: 80%;
 }
 
 .downloaderPhotoGallery {
@@ -31,48 +30,60 @@
 }
 
 .mainImage {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 110%;
+    height: 110%;
+    object-fit:cover;
 }
 
 .download-controls {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  margin: 1rem 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.size-select {
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: white;
-  font-size: 14px;
-  min-width: 150px;
+.download-button, .donate-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 .download-button {
-  padding: 0.5rem 1rem;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s;
+    background-color: #4CAF50;
+    color: white;
 }
 
-.download-button:hover {
-  background: #45a049;
+.download-button:hover:not(:disabled) {
+    background-color: #45a049;
 }
 
 .download-button:disabled {
-  background: #cccccc;
-  cursor: not-allowed;
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.donate-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.donate-button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+.donate-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #dc3545;
+    margin-top: 0.5rem;
+    font-size: 14px;
 }
 
 .thumbnails-container {

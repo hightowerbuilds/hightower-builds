@@ -1,1 +1,17 @@
+.photography-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+.gallery-container {
+    flex: 1;
+    position: relative;
+}
+
+.donation-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
