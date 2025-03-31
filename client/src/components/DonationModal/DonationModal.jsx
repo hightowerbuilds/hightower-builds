@@ -13,12 +13,19 @@ export default function DonationModal() {
             // Use the current origin for the API URL
             const apiUrl = `${window.location.origin}/api/create-checkout-session`;
             
+            console.log('Making request to:', apiUrl); // Debug log
+            
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to create checkout session');
+            }
 
             const data = await response.json();
             
@@ -29,8 +36,8 @@ export default function DonationModal() {
             // Redirect to Stripe Checkout
             window.location.href = data.url;
         } catch (err) {
+            console.error('Error details:', err); // Debug log
             setError('Failed to start payment process. Please try again.');
-            console.error('Error:', err);
         } finally {
             setIsLoading(false);
         }
