@@ -13,8 +13,7 @@ export default function DonationModal() {
             // Use the current origin for the API URL
             const apiUrl = `${window.location.origin}/api/create-checkout-session`;
             
-            console.log('Making request to:', apiUrl); // Debug log
-            
+            console.log('Sending request to:', apiUrl);
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -36,7 +35,7 @@ export default function DonationModal() {
             // Redirect to Stripe Checkout
             window.location.href = data.url;
         } catch (err) {
-            console.error('Error details:', err); // Debug log
+            console.error('Error details:', err);
             setError('Failed to start payment process. Please try again.');
         } finally {
             setIsLoading(false);
