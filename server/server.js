@@ -11,7 +11,12 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Configure CORS
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    origin: [
+        'http://localhost:5173', 
+        'http://127.0.0.1:5173',
+        'https://hightowerbuilds.com',
+        'https://www.hightowerbuilds.com'
+    ],
     credentials: true
 }));
 
@@ -24,6 +29,12 @@ app.get('/api/test', (req, res) => {
 
 app.post('/api/create-checkout-session', async (req, res) => {
     try {
+        if (!process.env.STRIPE_SECRET_KEY) {
+            console.error('STRIPE_SECRET_KEY is not set');
+            return res.status(500).json({ error: 'Server configuration error' });
+        }
+
+        console.log('Creating checkout session...');
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: [
@@ -43,10 +54,14 @@ app.post('/api/create-checkout-session', async (req, res) => {
             cancel_url: `${req.headers.origin}/photography?canceled=true`,
         });
 
+        console.log('Checkout session created successfully');
         res.json({ url: session.url });
     } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: error.message });
+        console.error('Error creating checkout session:', error);
+        res.status(500).json({ 
+            error: error.message,
+            details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+        });
     }
 });
 

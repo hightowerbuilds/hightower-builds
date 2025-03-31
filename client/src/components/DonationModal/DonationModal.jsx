@@ -10,7 +10,10 @@ export default function DonationModal() {
             setIsLoading(true);
             setError(null);
             
-            const response = await fetch('http://localhost:3000/api/create-checkout-session', {
+            // Use the current origin for the API URL
+            const apiUrl = `${window.location.origin}/api/create-checkout-session`;
+            
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
