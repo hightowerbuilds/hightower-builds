@@ -7,6 +7,15 @@ import DonationModal from '../../components/DonationModal/DonationModal';
 
 export default function Photography() {
     const [photoOne, setPhotoOne] = useState()
+    const [ navState, setNavState ] = useState(true)
+
+    const changeNavState = () => {
+        if (navState === true) {
+            setNavState(false)
+        } else if (navState === false) {
+            setNavState(true)
+        }
+    }
 
     useEffect(() => {
         const fetchPhoto = async () => {
@@ -21,14 +30,13 @@ export default function Photography() {
 
     return (
         <div className="photography-page">
-            <div className='navDiv'><NavBar /></div>
-            
+            {navState ? <button onClick={changeNavState}>NAV</button> :  <><NavBar /><button onClick={changeNavState}>look</button> </>}
+            <div className='navDiv'></div>
+           
             <div className="gallery-container">
                 <Gallery mainPhoto={photoOne} />
             </div>
-            <div className="donation-container">
-                <DonationModal />
-            </div>
+          
         </div>
     )
 }

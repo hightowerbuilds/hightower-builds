@@ -16,10 +16,7 @@
     z-index: 1000;
 }
 
-.navDiv {
-    display: none;
-}
 
 .navDiv:hover {
-    display: block;
+    transform: 20%;
 }

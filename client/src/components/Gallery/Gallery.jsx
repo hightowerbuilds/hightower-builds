@@ -2,7 +2,6 @@ import './Gallery.css';
 import { useState, useEffect, useRef } from "react"
 import PropTypes from 'prop-types';
 import { supabase } from '../../services/supabase';
-import DonationModal from '../DonationModal/DonationModal';
 import PerformanceMetrics from '../PerformanceMetrics/PerformanceMetrics';
 
 
@@ -13,7 +12,6 @@ export default function Gallery({ mainPhoto }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadingTime, setLoadingTime] = useState(null);
   const [dataSize, setDataSize] = useState(0);
- 
   const thumbnailsRef = useRef(null);
 
   useEffect(() => {
@@ -134,7 +132,6 @@ export default function Gallery({ mainPhoto }) {
             >
               {isDownloading ? 'Downloading...' : 'Download Photo'}
             </button>
-            <DonationModal />
           </div>
         </div>
 

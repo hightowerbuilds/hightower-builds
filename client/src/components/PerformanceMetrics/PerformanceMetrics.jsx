@@ -2,7 +2,6 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
 
-
 const PerformanceMetrics = ({ loadingTime, dataSize }) => {
   const [isVisible, setIsVisible] = useState(false);
 
