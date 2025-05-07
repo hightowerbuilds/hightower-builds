@@ -21,7 +21,8 @@ export default function Photography() {
 
     return (
         <div className="photography-page">
-            <NavBar />
+            <div className='navDiv'><NavBar /></div>
+            
             <div className="gallery-container">
                 <Gallery mainPhoto={photoOne} />
             </div>
